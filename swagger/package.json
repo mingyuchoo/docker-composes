@@ -1,0 +1,19 @@
+{
+  "name": "swagger",
+  "version": "1.0.0",
+  "description": "You can run docker containers for swagger",
+  "main": "docker-compose.yml",
+  "scripts": {
+    "docker:build": "docker-compose --file docker-compose.yml up --build --detach",
+    "docker:exec:swagger-editor": "docker exec --interactive=true --tty=true swagger-editor /bin/sh",
+    "docker:exec:swagger-ui": "docker exec --interactive=true --tty=true swagger-ui /bin/sh",
+    "docker:exec:swagger-api": "docker exec --interactive=true --tty=true swagger-api /bin/sh",
+    "docker:exec:swagger-nginx": "docker exec --interactive=true --tty=true swagger-nginx /bin/sh"
+  },
+  "keywords": [
+    "docker",
+    "swagger"
+  ],
+  "author": "mingyuchoo@gmail.com",
+  "license": "MIT License"
+}

@@ -1,0 +1,16 @@
+{
+  "name": "neo4j",
+  "version": "1.0.0",
+  "description": "You can run docker containers for neo4j",
+  "main": "docker-compose.yml",
+  "scripts": {
+    "docker:build": "docker-compose --file docker-compose.yml up --build --detach",
+    "docker:exec": "docker exec --interactive=true --tty=true neo4j-db /bin/bash"
+  },
+  "keywords": [
+    "docker",
+    "neo4j"
+  ],
+  "author": "mingyuchoo@gmail.com",
+  "license": "MIT License"
+}

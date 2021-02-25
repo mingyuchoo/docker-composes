@@ -1,0 +1,16 @@
+{
+  "name": "grafana",
+  "version": "1.0.0",
+  "description": "You can run docker containers for grafana",
+  "main": "docker-compose.yml",
+  "scripts": {
+    "docker:build": "docker-compose --file docker-compose.yml up --build --detach",
+    "docker:exec": "docker exec --interactive=true --tty=true grafana /bin/bash"
+  },
+  "keywords": [
+    "docker",
+    "grafana"
+  ],
+  "author": "mingyuchoo@gmail.com",
+  "license": "MIT License"
+}

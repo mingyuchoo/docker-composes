@@ -1,0 +1,16 @@
+{
+  "name": "mariadb",
+  "version": "1.0.0",
+  "description": "You can run docker containers for mariadb",
+  "main": "docker-compose.yml",
+  "scripts": {
+    "docker:build": "docker-compose --file docker-compose.yml up --build --detach",
+    "docker:exec:mariadb": "docker exec --interactive=true --tty=true mariadb /bin/bash"
+  },
+  "keywords": [
+    "docker",
+    "mariadb"
+  ],
+  "author": "mingyuchoo@gmail.com",
+  "license": "MIT License"
+}

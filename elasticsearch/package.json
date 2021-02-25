@@ -1,0 +1,16 @@
+{
+  "name": "elasticsearch",
+  "version": "1.0.0",
+  "description": "You can run docker containers for elasticsearch",
+  "main": "docker-compose.yml",
+  "scripts": {
+    "docker:build": "docker-compose --file docker-compose.yml up --build --detach",
+    "docker:exec:elasticsearch": "docker exec --interactive=true --tty=true elasticsearch-db /bin/bash"
+  },
+  "keywords": [
+    "docker",
+    "elasticsearch"
+  ],
+  "author": "mingyuchoo@gmail.com",
+  "license": "MIT License"
+}

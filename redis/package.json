@@ -1,0 +1,16 @@
+{
+  "name": "redis",
+  "version": "1.0.0",
+  "description": "You can run docker containers for redis",
+  "main": "docker-compose.yml",
+  "scripts": {
+    "docker:build": "docker-compose --file docker-compose.yml up --build --detach",
+    "docker:exec:redis": "docker exec --interactive=true --tty=true redis-db /bin/bash"
+  },
+  "keywords": [
+    "docker",
+    "redis"
+  ],
+  "author": "mingyuchoo@gmail.com",
+  "license": "MIT License"
+}

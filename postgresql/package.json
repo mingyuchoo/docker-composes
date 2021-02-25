@@ -1,0 +1,16 @@
+{
+  "name": "postgresql",
+  "version": "1.0.0",
+  "description": "You can run docker containers for postgresql",
+  "main": "docker-compose.yml",
+  "scripts": {
+    "docker:build": "docker-compose --file docker-compose.yml up --build --detach",
+    "docker:exec:postgresql-db": "docker exec --interactive=true --tty=true postgresql-db /bin/bash"
+  },
+  "keywords": [
+    "docker",
+    "postgresql"
+  ],
+  "author": "mingyuchoo@gmail.com",
+  "license": "MIT License"
+}

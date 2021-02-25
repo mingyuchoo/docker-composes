@@ -1,0 +1,16 @@
+{
+  "name": "jenkins",
+  "version": "1.0.0",
+  "description": "You can run docker containers for jenkins",
+  "main": "docker-compose.yml",
+  "scripts": {
+    "docker:build": "docker-compose --file docker-compose.yml up --build --detach",
+    "docker:exec": "docker exec --interactive=true --tty=true jenkins /bin/bash"
+  },
+  "keywords": [
+    "docker",
+    "jenkins"
+  ],
+  "author": "mingyuchoo@gmail.com",
+  "license": "MIT License"
+}
