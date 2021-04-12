@@ -4,7 +4,9 @@
   "description": "You can run docker containers for dynamodb",
   "main": "docker-compose.yml",
   "scripts": {
-    "docker:build": "docker-compose --file docker-compose.yml up --build --detach"
+    "docker:build": "docker-compose --file docker-compose.yml up --build --detach",
+    "docker:exec": "docker exec -it dynamodb-local /bin/bash",
+    "docker:exec:root": "docker exec -u root -it dynamodb-local /bin/bash"
   },
   "keywords": [
     "docker",

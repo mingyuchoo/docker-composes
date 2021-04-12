@@ -5,7 +5,8 @@
   "main": "docker-compose.yml",
   "scripts": {
     "docker:build": "docker-compose --file docker-compose.yml up --build --detach",
-    "docker:exec:mariadb": "docker exec --interactive=true --tty=true mariadb /bin/bash"
+    "docker:exec": "docker exec -it mariadb /bin/bash",
+    "docker:exec:root": "docker exec -u root -it mariadb /bin/bash"
   },
   "keywords": [
     "docker",

@@ -5,7 +5,8 @@
   "main": "docker-compose.yml",
   "scripts": {
     "docker:build": "docker-compose --file docker-compose.yml up --build --detach",
-    "docker:exec:redis": "docker exec --interactive=true --tty=true redis-db /bin/bash"
+    "docker:exec": "docker exec -it redis-db /bin/bash",
+    "docker:exec:root": "docker exec -u root -it redis-db /bin/bash"
   },
   "keywords": [
     "docker",

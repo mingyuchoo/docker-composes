@@ -5,8 +5,8 @@
   "main": "docker-compose.yml",
   "scripts": {
     "docker:build": "docker-compose --file docker-compose.yml up --build --detach",
-    "docker:exec:pact-broker": "docker exec --interactive=true --tty=true pact-broker /bin/bash",
-    "docker:exec:pact-broker-db": "docker exec --interactive=true --tty=true pact-broker-db /bin/bash"
+    "docker:exec:pact-broker": "docker exec -it pact-broker /bin/bash",
+    "docker:exec:pact-broker-db": "docker exec -it pact-broker-db /bin/bash"
   },
   "keywords": [
     "pact",

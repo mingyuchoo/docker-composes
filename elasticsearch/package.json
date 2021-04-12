@@ -5,7 +5,7 @@
   "main": "docker-compose.yml",
   "scripts": {
     "docker:build": "docker-compose --file docker-compose.yml up --build --detach",
-    "docker:exec:elasticsearch": "docker exec --interactive=true --tty=true elasticsearch-db /bin/bash"
+    "docker:exec:elasticsearch": "docker exec -it elasticsearch-db /bin/bash"
   },
   "keywords": [
     "docker",
