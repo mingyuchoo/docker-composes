@@ -9,8 +9,3 @@ services:
       - 50000:50000
     environment:
       - TZ='Asia/Seoul'
-    volumes:
-      - "./jenkins_home:/var/jenkins_home"
-
-volumes:
-  jenkins_home:
