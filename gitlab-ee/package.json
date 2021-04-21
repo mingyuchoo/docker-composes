@@ -1,0 +1,17 @@
+{
+  "name": "gitlab",
+  "version": "1.0.0",
+  "description": "You can run docker containers for gitlab",
+  "main": "docker-compose.yml",
+  "scripts": {
+    "docker:build": "docker-compose --file docker-compose.yml up --build --detach",
+    "docker:exec": "docker exec -it gitlab /bin/bash",
+    "docker:exec:root": "docker exec -u root -it gitlab /bin/bash"
+  },
+  "keywords": [
+    "docker",
+    "gitlab"
+  ],
+  "author": "mingyuchoo@gmail.com",
+  "license": "MIT License"
+}
