@@ -4,7 +4,6 @@ services:
   gitlab:
     image: "gitlab/gitlab-ee:latest"
     container_name: gitlab
-    restart: always
     hostname: 'gitlab.example.com'
     environment:
       GITLAB_OMNIBUS_CONFIG: |
