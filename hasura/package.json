@@ -1,0 +1,17 @@
+{
+  "name": "hasura",
+  "version": "1.0.0",
+  "description": "You can run docker containers for hasura",
+  "main": "docker-compose.yaml",
+  "scripts": {
+    "docker:build": "docker-compose --file docker-compose.yaml up --build --detach",
+    "docker:exec": "docker exec -it hasura /bin/bash",
+    "docker:exec:root": "docker exec -u root -it hasura /bin/bash"
+  },
+  "keywords": [
+    "docker",
+    "hasura"
+  ],
+  "author": "mingyuchoo@gmail.com",
+  "license": "MIT License"
+}
