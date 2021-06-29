@@ -2,6 +2,7 @@ version: '3.6'
 services:
   postgres:
     image: postgres:12
+    container_name: hasura_db
     restart: always
     volumes:
     - db_data:/var/lib/postgresql/data
@@ -9,6 +10,7 @@ services:
       POSTGRES_PASSWORD: postgrespassword
   graphql-engine:
     image: hasura/graphql-engine:latest
+    container_name: hasura_engine
     ports:
     - "8080:8080"
     depends_on:

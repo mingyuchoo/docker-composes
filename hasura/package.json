@@ -5,8 +5,8 @@
   "main": "docker-compose.yaml",
   "scripts": {
     "docker:build": "docker-compose --file docker-compose.yaml up --build --detach",
-    "docker:exec": "docker exec -it hasura /bin/bash",
-    "docker:exec:root": "docker exec -u root -it hasura /bin/bash"
+    "docker:exec": "docker exec -it hasura_engine /bin/bash",
+    "docker:exec:root": "docker exec -u root -it hasura_engine /bin/bash"
   },
   "keywords": [
     "docker",
