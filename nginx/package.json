@@ -1,0 +1,17 @@
+{
+  "name": "nginx",
+  "version": "1.0.0",
+  "description": "You can run docker containers for nginx",
+  "main": "docker-compose.yaml",
+  "scripts": {
+    "docker:build": "docker-compose --file docker-compose.yaml up --build --detach",
+    "docker:exec": "docker exec -it nginx /bin/sh",
+    "docker:exec:root": "docker exec -u root -it nginx /bin/sh"
+  },
+  "keywords": [
+    "docker",
+    "nginx"
+  ],
+  "author": "mingyuchoo@gmail.com",
+  "license": "MIT License"
+}
