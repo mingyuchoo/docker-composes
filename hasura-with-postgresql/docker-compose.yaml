@@ -1,19 +1,38 @@
 version: '3.9'
 
 networks:
-  default:
-    external: true
-    name: db_net
+  hasura-net:
+
+volumes:
+  db_data:
 
 services:
+
+  postgres:
+    image: postgres:12 # don't change version
+    container_name: hasura_db
+    restart: always
+    networks:
+    - hasura-net
+    ports:
+    - "5432:5432"
+    volumes:
+    - db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: postgrespassword
 
   graphql-engine:
     image: hasura/graphql-engine:latest
     container_name: hasura_engine
+    restart: always
+    networks:
+    - hasura-net
     ports:
     - "8080:8080"
+    depends_on:
+    - "postgres"
     environment:
-      HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:postgres@postgresql-db:5432/postgres # `postgresql-db` is a container name
+      HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
       ## enable the console served by server
       HASURA_GRAPHQL_ENABLE_CONSOLE: "true" # set to "false" to disable console
       ## enable debugging mode. It is recommended to disable this in production

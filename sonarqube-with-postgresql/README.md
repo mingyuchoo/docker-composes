@@ -1,6 +1,4 @@
-# Pact Broker with PostgreSQL
-
-이 프로젝트는 CDC(Consumer Driven Contract) Test를 위한 Pact Broker를 띄우는 목적입니다.
+# SonarQube with PostgreSQL
 
 ## 준비할 환경
 
@@ -15,9 +13,9 @@
 
 ## 접속 방법
 
-- `http://localhost:9292`
+- `http://localhost:9000`
 
 ## 고려 사항
 
-pact broker를 기동하기 위해 PostgreSQL 서버를 5432 포트로 기동합니다.
-DB와 Broker에 접속하기 위한 계정 정보는 docker-compose-pact-broker.yml을 참고하세요.
+SonarQube를 기동하기 위해 PostgreSQL 서버를 5432 포트로 기동합니다.
+DB와 SonarQube에 접속하기 위한 계정 정보는 docker-compose.yml을 참고하세요.

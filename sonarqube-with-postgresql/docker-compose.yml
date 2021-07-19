@@ -1,4 +1,8 @@
-version: '3.7'
+version: '3.9'
+
+networks:
+  sonar-net:
+
 services:
   sonarqube-db:
     image: postgres:latest
@@ -6,7 +10,7 @@ services:
     ports:
       - 5432:5432
     networks:
-      - quality-net
+      - sonar-net
     environment:
       - DEBUG=false
       - POSTGRES_DB=postgres
@@ -17,7 +21,7 @@ services:
 
   sonarqube:
     image: sonarqube:latest
-    command: -Dsonar.ce.javaOpts=-Xmx1192m -Dsonar.web.javaOpts=-Xmx1192m -Dsonar.search.javaAdditionalOpts=-Dnode.store.allow_mmapfs=false
+    command: -Dsonar.ce.javaOpts=-Xmx1192m -Dsonar.web.javaOpts=-Xmx1192m -Dsonar.search.javaAdditionalOpts=-Dnode.store.allow_mmap=false
     container_name: sonarqube
     depends_on:
       - sonarqube-db
@@ -28,11 +32,9 @@ services:
         soft: 65535
         hard: 65535
     networks:
-      - quality-net
+      - sonar-net
     environment:
       - sonar.jdbc.username=postgres
       - sonar.jdbc.password=postgres
       - sonar.jdbc.url=jdbc:postgresql://sonarqube-db/postgres
 
-networks:
-  quality-net:

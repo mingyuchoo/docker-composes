@@ -1,0 +1,23 @@
+version: '3.9'
+
+networks:
+  default:
+    external: true
+    name: db_net
+
+services:
+  sonarqube:
+    image: sonarqube:latest
+    command: -Dsonar.ce.javaOpts=-Xmx1192m -Dsonar.web.javaOpts=-Xmx1192m -Dsonar.search.javaAdditionalOpts=-Dnode.store.allow_mmap=false
+    container_name: sonarqube
+    ports:
+      - 9000:9000
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
+    environment:
+      - sonar.jdbc.username=postgres
+      - sonar.jdbc.password=postgres
+      - sonar.jdbc.url=jdbc:postgresql://postgresql-db:5432/postgres  # `postgresql-db` is a container name
+

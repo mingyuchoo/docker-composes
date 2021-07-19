@@ -1,0 +1,19 @@
+{
+  "name": "hasura-with-postgresql",
+  "version": "1.0.0",
+  "description": "You can run docker containers for hasura",
+  "main": "docker-compose.yaml",
+  "scripts": {
+    "docker:build": "docker-compose --file docker-compose.yaml up --build --detach",
+    "docker:exec:hasura": "docker exec -it hasura_engine /bin/bash",
+    "docker:exec:hasura:root": "docker exec -u root -it hasura_engine /bin/bash",
+    "docker:exec:db": "docker exec -it hasura_db /bin/bash"
+  },
+  "keywords": [
+    "docker",
+    "postgresql",
+    "hasura"
+  ],
+  "author": "mingyuchoo@gmail.com",
+  "license": "MIT License"
+}

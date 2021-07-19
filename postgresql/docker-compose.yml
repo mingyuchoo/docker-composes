@@ -1,7 +1,16 @@
-version: "3.8"
+version: "3.9"
+
+networks:
+  db_net:
+    name: db_net
+    driver: bridge
+
+volumes:
+  db_data:
+
 services:
   postgresql-db:
-    image: "postgres:latest"
+    image: postgres:12
     container_name: postgresql-db
     ports:
       - 5432:5432
@@ -9,14 +18,8 @@ services:
       - db_net
     environment:
       - DEBUG=false
-      - POSTGRES_DB=test
-      - POSTGRES_USER=test
-      - POSTGRES_PASSWORD=test
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
     volumes:
-      - db_data:/var/lib/postgresql/data
-
-networks:
-  db_net:
-
-volumes:
-  db_data:
+      - ./db_data:/var/lib/postgresql/data

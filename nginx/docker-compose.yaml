@@ -1,4 +1,13 @@
-version: '3.8'
+version: '3.9'
+
+networks:
+  default:
+    external: true
+    name: db_net
+
+volumes:
+  html:
+
 services:
   nginx:
     image: nginx:latest
@@ -7,5 +16,3 @@ services:
       - "80:80"
     volumes:
       - ./html:/usr/share/nginx/html
-volumes:
-  html:

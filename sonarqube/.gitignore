@@ -118,9 +118,3 @@ dist
 # Cypress
 cypress/**/videos
 cypress/**/screenshots
-
-# macos
-.DS_Store
-
-# dcoker
-neo4j_db/

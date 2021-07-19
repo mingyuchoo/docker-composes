@@ -1,5 +1,10 @@
 version: "3.8"
 
+networks:
+  default:
+    external: true
+    name: db_net
+
 services:
   jenkins:
     image: "jenkins/jenkins:latest"

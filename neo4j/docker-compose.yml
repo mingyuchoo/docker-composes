@@ -1,4 +1,11 @@
 version: "3.8"
+networks:
+  default:
+    external: true
+    name: db_net
+
+volumes:
+  neo4j_db:
 
 services:
   neo4j-db:
@@ -19,11 +26,8 @@ services:
       - NEO4J_dbms_allow__upgrade=true
       - NEO4J_dbms_default__database=neo4j
       - NEO4J_dbms_default__listen__address=0.0.0.0
-
     volumes:
       - ./neo4j_db/data:/data
       - ./neo4j_db/plugins:/plugins
       - ./neo4j_db/import:/import
 
-volumes:
-  neo4j_db:
