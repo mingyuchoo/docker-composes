@@ -14,4 +14,4 @@
 ## 접속 방법
 
 - `http://localhost:9000`
-
+- id/pw: admin/admin

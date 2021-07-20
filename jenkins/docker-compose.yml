@@ -1,21 +1,16 @@
 version: "3.9"
 
 networks:
-  db_net:
+  default:
+    external: true
     name: db_net
-    driver: bridge
-
-# networks:
-#   default:
-#     external: true
-#     name: db_net
 
 services:
   jenkins:
     image: "jenkins/jenkins:latest"
     container_name: jenkins
     ports:
-      - 8080:8080
+      - 8888:8080
       - 50000:50000
     environment:
       - TZ='Asia/Seoul'

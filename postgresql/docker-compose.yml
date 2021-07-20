@@ -28,5 +28,12 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+      - HASURA_DB=hasura
+      - HASURA_USER=hasura
+      - HASURA_PASSWORD=hasura
+      - SONAR_DB=sonar
+      - SONAR_USER=sonar
+      - SONAR_PASSWORD=sonar
     volumes:
+      - ./init/:/docker-entrypoint-initdb.d/
       - ./db_data:/var/lib/postgresql/data
