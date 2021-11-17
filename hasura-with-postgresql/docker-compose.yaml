@@ -10,7 +10,7 @@ services:
 
   postgres:
     image: postgres:12 # don't change version
-    container_name: hasura_db
+    container_name: hasura-db
     restart: always
     networks:
     - hasura-net
@@ -23,7 +23,7 @@ services:
 
   graphql-engine:
     image: hasura/graphql-engine:latest
-    container_name: hasura_engine
+    container_name: hasura-engine
     restart: always
     networks:
     - hasura-net
