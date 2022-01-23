@@ -1,0 +1,17 @@
+{
+  "name": "gocd",
+  "version": "1.0.0",
+  "description": "You can run docker containers for GoCD",
+  "main": "docker-compose.yml",
+  "scripts": {
+    "docker:build": "docker-compose --file docker-compose.yml up --build --detach",
+    "docker:exec": "docker exec -it gocd /bin/bash",
+    "docker:exec:root": "docker exec -u root -it gocd /bin/bash"
+  },
+  "keywords": [
+    "docker",
+    "gocd"
+  ],
+  "author": "mingyuchoo@gmail.com",
+  "license": "MIT License"
+}

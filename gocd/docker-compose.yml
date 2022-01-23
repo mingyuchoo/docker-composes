@@ -1,0 +1,35 @@
+version: "3.9"
+
+networks:
+  gocd-net:
+
+services:
+  gocd-git:
+    image: gocdcontrib/git-http-backend:v2
+    networks:
+      - gocd-net
+    ports:
+      - 8155:80
+  gocd-server:
+    image: "gocd/gocd-server:v21.4.0"
+    container_name: gocd-server
+    networks:
+      - gocd-net
+    depends_on:
+      - gocd-git
+    ports:
+      - 8153:8153
+      - 8154:8154
+    environment:
+      - GO_SERVER_SYSTEM_PROPERTIES=-Dcruise.material.update.interval=2000 -Dmaterial.update.idle.interval=2000
+  gocd-agent:
+    image: "gocd/gocd-agent-alpine-3.12:v21.4.0"
+    container_name: gocd-agent
+    networks:
+      - gocd-net
+    depends_on:
+      - gocd-git
+      - gocd-server
+    environment:
+      - GO_SERVER_URL=http://gocd-server:8153/go
+      - AGENT_AUTO_REGISTER_KEY=agent-autoregister-key
