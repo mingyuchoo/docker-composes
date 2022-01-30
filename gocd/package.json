@@ -5,6 +5,7 @@
   "main": "docker-compose.yml",
   "scripts": {
     "docker:build": "docker-compose --file docker-compose.yml up --build --detach",
+    "docker:clean": "docker-compose down --rmi all --volumes --remove-orphans",
     "docker:exec": "docker exec -it gocd /bin/bash",
     "docker:exec:root": "docker exec -u root -it gocd /bin/bash"
   },
