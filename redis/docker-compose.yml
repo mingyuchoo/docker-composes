@@ -6,12 +6,6 @@ networks:
     name: db_net
     driver: bridge
 
-# Use `db_net`
-# networks:
-#   default:
-#     external: true
-#     name: db_net
-
 volumes:
   data:
 

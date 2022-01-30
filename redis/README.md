@@ -1,1 +1,1 @@
-# Docker Compose for MySQL
+# Docker Compose for Redis
