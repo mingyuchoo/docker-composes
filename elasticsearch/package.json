@@ -4,7 +4,8 @@
   "description": "You can run docker containers for elasticsearch",
   "main": "docker-compose.yml",
   "scripts": {
-    "docker:build": "docker-compose --file docker-compose.yml up --build --detach",
+    "docker:up": "docker-compose --file docker-compose.yml up --build --detach",
+    "docker:down": "docker-compose --file docker-compose.yml down --volumes --remove-orphans",
     "docker:exec:elasticsearch": "docker exec -it elasticsearch-db /bin/bash"
   },
   "keywords": [

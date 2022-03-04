@@ -4,7 +4,8 @@
   "description": "You can run docker containers for mysql",
   "main": "docker-compose.yml",
   "scripts": {
-    "docker:build": "docker-compose --file docker-compose.yml up --build --detach",
+    "docker:up": "docker-compose --file docker-compose.yml up --build --detach",
+    "docker:down": "docker-compose --file docker-compose.yml down --volumes --remove-orphans",
     "docker:exec": "docker exec -it mysql-db /bin/bash",
     "docker:exec:root": "docker exec -u root -it mysql-db /bin/bash"
   },

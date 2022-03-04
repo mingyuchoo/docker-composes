@@ -9,7 +9,7 @@
 
 ## 실행 방법
 
-- `npm run docker:build`
+- `npm run docker:up`
 
 ## 접속 방법
 
