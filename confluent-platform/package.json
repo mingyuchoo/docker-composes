@@ -1,0 +1,15 @@
+{
+  "name": "confluent-platform",
+  "version": "1.0.0",
+  "description": "You can run docker containers for confluent platform",
+  "main": "docker-compose.yml",
+  "scripts": {
+    "docker:build": "docker-compose --file docker-compose.yml up --build --detach"
+  },
+  "keywords": [
+    "docker",
+    "confluent"
+  ],
+  "author": "mingyuchoo@gmail.com",
+  "license": "MIT License"
+}
