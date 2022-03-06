@@ -6,6 +6,7 @@ networks:
 services:
   gocd-git:
     image: gocdcontrib/git-http-backend:v2
+    container_name: gocd-git
     networks:
       - gocd-net
     ports:
