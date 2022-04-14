@@ -121,3 +121,4 @@ cypress/**/screenshots
 
 # Jenkins
 jenkins_home/
+var/

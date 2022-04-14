@@ -1,9 +1,9 @@
 version: "3.9"
 
-# Create `db_net` if exists use it
+# Create `my_net` if exists use it
 networks:
-  db_net:
-    name: db_net
+  my_net:
+    name: my_net
     driver: bridge
 
 volumes:

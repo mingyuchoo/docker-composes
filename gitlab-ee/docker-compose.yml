@@ -1,14 +1,14 @@
 version: "3.9"
 
 networks:
-  db_net:
-    name: db_net
+  my_net:
+    name: my_net
     driver: bridge
 
 # networks:
 #   default:
 #     external: true
-#     name: db_net
+#     name: my_net
 
 volumes:
   gitlab:
