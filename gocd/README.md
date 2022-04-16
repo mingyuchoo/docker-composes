@@ -1,9 +1,13 @@
 # Docker Compose for GoCD
 
-## How to start
+## How to start this container
 
 ```bash
-npm run docker:up
+docker-compose up -d
+
+# or
+
+npm run start docker:up
 ```
 
 ## Connection information

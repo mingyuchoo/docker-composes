@@ -12,6 +12,16 @@
 - ksql-datagen
 - rest-proxy
 
+## How to start this container
+
+```bash
+docker-compose up -d
+
+# or
+
+npm run start docker:up
+```
+
 ## References
 
 -<https://docs.confluent.io/platform/current/quickstart/ce-docker-quickstart.html>

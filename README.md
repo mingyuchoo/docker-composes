@@ -10,4 +10,8 @@ docker network create <network-name>
 
 ```bash
 docker-compose up -d
+
+# or
+
+npm run start docker:up
 ```

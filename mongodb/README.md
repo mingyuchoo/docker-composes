@@ -1,6 +1,16 @@
 # Docker Compose for Mongo DB
 
-- https://docs.mongodb.com/manual/
+- <https://docs.mongodb.com/manual/>
+
+## How to start this container
+
+```bash
+docker-compose up -d
+
+# or
+
+npm run start docker:up
+```
 
 ## admin 사용자가 추가되는 메커니즘
 
@@ -10,8 +20,8 @@
 
 ## mongo cli 를 이용해서 직접 사용자를 추가하는 방법
 
-```
-$ mongo
+```bash
+mongo
 
 > use admin
 > db.auth('root', 'root')

@@ -7,9 +7,16 @@
 - docker 설치
 - docker-compose 설치
 
-## 실행 방법
 
-- `npm run docker:up`
+## How to start this container
+
+```bash
+docker-compose up -d
+
+# or
+
+npm run start docker:up
+```
 
 ## 접속 방법
 
