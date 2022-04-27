@@ -1,0 +1,18 @@
+version: "3.9"
+
+volumes:
+  git-volume:
+  index-volume:
+  cache-volume:
+
+services:
+  gerrit:
+    image: gerritcodereview/gerrit
+    container_name: gerrit
+    ports:
+      - "29418:29418"
+      - "8080:8080"
+    volumes:
+      - git-volume:/var/gerrit/git
+      - index-volume:/var/gerrit/index
+      - cache-volume:/var/gerrit/cache
