@@ -29,8 +29,11 @@ services:
       - 9000:9000
     ulimits:
       nofile:
-        soft: 65535
-        hard: 65535
+        soft: 65536
+        hard: 65536
+      memlock:
+        soft: -1
+        hard: -1
     networks:
       - sonar-net
     environment:
