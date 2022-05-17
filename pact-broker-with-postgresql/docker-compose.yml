@@ -1,4 +1,8 @@
-version: '3.7'
+version: '3.9'
+
+networks:
+  my-net:
+
 services:
   pact-broker-db:
     image: 'postgres:latest'
@@ -6,7 +10,7 @@ services:
     ports:
       - 5432:5432
     networks:
-      - quality-net
+      - my-net
     environment:
       - DEBUG=false
       - POSTGRES_DB=postgres
@@ -14,6 +18,7 @@ services:
       - POSTGRES_PASSWORD=postgres
     volumes:
       - /mnt/postgres/data:/var/lib/postgresql/data
+      
   pact:
     image: pactfoundation/pact-broker
     container_name: pact-broker
@@ -22,7 +27,7 @@ services:
     ports:
       - 9292:9292
     networks:
-      - quality-net
+      - my-net
     environment:
       - PACT_BROKER_DATABASE_HOST=pact-broker-db
       - PACT_BROKER_DATABASE_NAME=postgres
@@ -33,6 +38,3 @@ services:
       - PACT_BROKER_BASIC_AUTH_USERNAME=admin
       - PACT_BROKER_BASIC_AUTH_PASSWORD=admin
       - PACT_BROKER_ALLOW_PUBLIC_READ=true
-
-networks:
-  quality-net:

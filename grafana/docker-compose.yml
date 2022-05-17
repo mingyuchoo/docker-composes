@@ -1,9 +1,9 @@
-version: "3.9"
+version: '3.9'
 
 networks:
   default:
     external: true
-    name: my_net
+    name: my-net
 
 services:
   grafana-db:

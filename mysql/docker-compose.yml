@@ -1,16 +1,16 @@
-version: "3.9"
+version: '3.9'
 
-# Create `my_net` if exists use it
+# Create `my-net` if exists use it
 networks:
-  my_net:
-    name: my_net
+  my-net:
+    name: my-net
     driver: bridge
 
-# Use `my_net`
+# Use `my-net`
 # networks:
 #   default:
 #     external: true
-#     name: my_net
+#     name: my-net
 
 volumes:
   docker:
