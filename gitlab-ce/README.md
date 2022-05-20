@@ -7,5 +7,5 @@ docker-compose up -d
 
 # or
 
-npm run start docker:up
+npm run docker:up
 ```

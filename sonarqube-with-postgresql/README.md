@@ -14,7 +14,13 @@ docker-compose up -d
 
 # or
 
-npm run start docker:up
+npm run docker:up
+```
+
+## How to stop and delete container
+
+```bash
+npm run docker:down
 ```
 
 ## 접속 방법

@@ -9,7 +9,13 @@ docker-compose up -d
 
 # or
 
-npm run start docker:up
+npm run docker:up
+```
+
+## How to stop and delete container
+
+```bash
+npm run docker:down
 ```
 
 ## admin 사용자가 추가되는 메커니즘
