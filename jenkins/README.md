@@ -21,3 +21,16 @@ npm run docker:down
 ```bash
 docker logs jenkins | less
 ```
+
+## How to resolve Configure Proxy
+
+```xml
+<?xml version='1.1' encoding='UTF-8'?>
+<sites>
+  <site>
+    <id>default</id>
+    <!-- <url>https://updates.jenkins.io/update-center.json</url> -->
+    <url>http://updates.jenkins.io/update-center.json</url>
+  </site>
+</sites>
+```
