@@ -24,6 +24,8 @@ docker logs jenkins | less
 
 ## How to resolve Configure Proxy
 
+Change `/var/jenkins_home/hudson.model.UpdateCenter.xml` to like this ...
+
 ```xml
 <?xml version='1.1' encoding='UTF-8'?>
 <sites>
@@ -34,3 +36,13 @@ docker logs jenkins | less
   </site>
 </sites>
 ```
+
+and install `skip-certificate-check` plugin to `/var/jenkins_home/plugins/`
+
+```bash
+sudo curl \
+ -SL https://updates.jenkins-ci.org/download/plugins/skip-certificate-check/1.0/skip-certificate-check.hpi \
+ -o /var/jenkins_home/plugins/skip-certificate-check.hpi
+```
+
+and restart Jenkins
