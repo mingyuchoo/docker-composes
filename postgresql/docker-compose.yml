@@ -18,6 +18,12 @@ volumes:
 services:
   postgresql-db:
     image: postgres:12
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
     container_name: postgresql-db
     ports:
       - 5432:5432

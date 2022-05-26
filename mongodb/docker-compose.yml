@@ -18,6 +18,12 @@ networks:
 services:
   mongo:
     image: mongo
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
     container_name: mongo-db
     restart: always
     ports:

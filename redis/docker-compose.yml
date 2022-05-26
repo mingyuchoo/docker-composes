@@ -12,6 +12,12 @@ volumes:
 services:
   redis-db:
     image: redis:latest
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
     container_name: redis-db
     ports:
       - 6379:6379

@@ -17,6 +17,12 @@ volumes:
 services:
   neo4j-db:
     image: neo4j:latest
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
     container_name: neo4j-db
     ports:
       - 7474:7474

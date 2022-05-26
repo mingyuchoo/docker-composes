@@ -12,7 +12,7 @@ services:
     ports:
       - 8155:80
   gocd-server:
-    image: "gocd/gocd-server:v21.4.0"
+    image: 'gocd/gocd-server:v21.4.0'
     container_name: gocd-server
     networks:
       - gocd-net
@@ -24,7 +24,7 @@ services:
     environment:
       - GO_SERVER_SYSTEM_PROPERTIES=-Dcruise.material.update.interval=2000 -Dmaterial.update.idle.interval=2000
   gocd-agent:
-    image: "gocd/gocd-agent-alpine-3.12:v21.4.0"
+    image: 'gocd/gocd-agent-alpine-3.12:v21.4.0'
     container_name: gocd-agent
     networks:
       - gocd-net

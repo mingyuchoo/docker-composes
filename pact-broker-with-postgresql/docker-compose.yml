@@ -6,6 +6,12 @@ networks:
 services:
   pact-broker-db:
     image: 'postgres:latest'
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
     container_name: pact-broker-db
     ports:
       - 5432:5432
@@ -21,6 +27,12 @@ services:
       
   pact:
     image: pactfoundation/pact-broker
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
     container_name: pact-broker
     depends_on:
       - pact-broker-db

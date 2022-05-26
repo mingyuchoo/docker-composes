@@ -18,8 +18,14 @@ volumes:
 services:
   nginx:
     image: nginx:latest
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
     container_name: nginx
     ports:
-      - "80:80"
+      - '80:80'
     volumes:
       - ./html:/usr/share/nginx/html

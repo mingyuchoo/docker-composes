@@ -7,7 +7,13 @@ networks:
 
 services:
   grafana-db:
-    image: "grafana/grafana:latest"
+    image: 'grafana/grafana:latest'
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
     container_name: grafana
     ports:
       - 3300:3000

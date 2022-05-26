@@ -10,6 +10,12 @@ volumes:
 services:
   jenkins:
     image: "jenkins/jenkins:latest"
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
     container_name: jenkins
     ports:
       - 8888:8080
