@@ -26,7 +26,7 @@ services:
       - /data/postgresql/data:/var/lib/postgresql/data
 
   sonarqube:
-    image: sonarqube:latest
+    image: sonarqube:8.9.9-community
     deploy:
       restart_policy:
         condition: on-failure
