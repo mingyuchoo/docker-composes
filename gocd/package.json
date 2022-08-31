@@ -6,8 +6,8 @@
   "scripts": {
     "docker:up": "docker-compose --file docker-compose.yml up --build --detach",
     "docker:down": "docker-compose --file docker-compose.yml down --volumes --remove-orphans",
-    "docker:exec": "docker exec -it gocd /bin/bash",
-    "docker:exec:root": "docker exec -u root -it gocd /bin/bash"
+    "docker:exec": "docker exec -it gocd /bin/sh",
+    "docker:exec:root": "docker exec -u root -it gocd /bin/sh"
   },
   "keywords": [
     "docker",

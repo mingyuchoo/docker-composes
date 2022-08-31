@@ -6,8 +6,8 @@
   "scripts": {
     "docker:up": "docker-compose --file docker-compose.yaml up --build --detach",
     "docker:down": "docker-compose --file docker-compose.yml down --volumes --remove-orphans",
-    "docker:exec": "docker exec -it hasura_engine /bin/bash",
-    "docker:exec:root": "docker exec -u root -it hasura_engine /bin/bash"
+    "docker:exec": "docker exec -it hasura_engine /bin/sh",
+    "docker:exec:root": "docker exec -u root -it hasura_engine /bin/sh"
   },
   "keywords": [
     "docker",

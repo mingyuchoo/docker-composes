@@ -6,8 +6,8 @@
   "scripts": {
     "docker:up": "docker-compose --file docker-compose.yml up --build --detach",
     "docker:down": "docker-compose --file docker-compose.yml down --volumes --remove-orphans",
-    "docker:exec:pact-broker": "docker exec -it pact-broker /bin/bash",
-    "docker:exec:pact-broker-db": "docker exec -it pact-broker-db /bin/bash"
+    "docker:exec:pact-broker": "docker exec -it pact-broker /bin/sh",
+    "docker:exec:pact-broker-db": "docker exec -it pact-broker-db /bin/sh"
   },
   "keywords": [
     "pact",
