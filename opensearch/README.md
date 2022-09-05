@@ -1,4 +1,6 @@
-# Docker Compose for Elasticsearch
+# Docker Compose for OpenSearch
+
+- <https://docs.opensearch.com/manual/>
 
 ## Prerequsite
 
@@ -31,3 +33,9 @@ npm run docker:up
 ```sh
 npm run docker:down
 ```
+
+## How to use Dashboard
+
+- Connecto to <http://localhost:5601>
+- id/pw is `admin/admin`
+
