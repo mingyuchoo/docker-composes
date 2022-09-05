@@ -119,5 +119,9 @@ dist
 cypress/**/videos
 cypress/**/screenshots
 
-# Data
-data/
+# Datbase
+db_data/
+docker/
+
+# macos
+.DS_Store
