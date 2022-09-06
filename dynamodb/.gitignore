@@ -121,3 +121,4 @@ cypress/**/screenshots
 
 # mongodb
 db_data/
+docker/
