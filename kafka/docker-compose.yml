@@ -1,8 +1,16 @@
 ---
-version: '3.8'
+version: '3.9'
 services:
   zookeeper-1:
     image: confluentinc/cp-zookeeper:latest
+    container_name: zookeeper-1
+    restart: always
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
     ports:
       - '32181:32181'
     environment:
@@ -11,6 +19,14 @@ services:
 
   kafka-1:
     image: confluentinc/cp-kafka:latest
+    container_name: kafka-1
+    restart: always
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
     ports:
       - '9092:9092'
     depends_on:
@@ -26,6 +42,14 @@ services:
 
   kafka-2:
     image: confluentinc/cp-kafka:latest
+    container_name: kafka-2
+    restart: always
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
     ports:
       - '9093:9093'
     depends_on:
@@ -41,6 +65,14 @@ services:
 
   kafka-3:
     image: confluentinc/cp-kafka:latest
+    container_name: kafka-3
+    restart: always
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
     ports:
       - '9094:9094'
     depends_on:
@@ -57,6 +89,13 @@ services:
   kafka-ui:
     image: provectuslabs/kafka-ui:latest
     container_name: kafka-ui
+    restart: always
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
     ports:
       - "8989:8080"
     restart: always

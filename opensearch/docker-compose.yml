@@ -1,8 +1,23 @@
-version: '3'
+version: '3.9'
+
+volumes:
+  opensearch-data1:
+  opensearch-data2:
+
+networks:
+  opensearch-net:
+
 services:
   opensearch-node1:
     image: opensearchproject/opensearch:latest
     container_name: opensearch-node1
+    restart: always
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
     environment:
       - cluster.name=opensearch-cluster
       - node.name=opensearch-node1
@@ -24,9 +39,17 @@ services:
       - 9600:9600 # required for Performance Analyzer
     networks:
       - opensearch-net
+
   opensearch-node2:
     image: opensearchproject/opensearch:latest
     container_name: opensearch-node2
+    restart: always
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
     environment:
       - cluster.name=opensearch-cluster
       - node.name=opensearch-node2
@@ -45,9 +68,17 @@ services:
       - opensearch-data2:/usr/share/opensearch/data
     networks:
       - opensearch-net
+
   opensearch-dashboards:
     image: opensearchproject/opensearch-dashboards:latest
     container_name: opensearch-dashboards
+    restart: always
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
     ports:
       - 5601:5601
     expose:
@@ -56,10 +87,3 @@ services:
       OPENSEARCH_HOSTS: '["https://opensearch-node1:9200","https://opensearch-node2:9200"]' # must be a string with no spaces when specified as an environment variable
     networks:
       - opensearch-net
-
-volumes:
-  opensearch-data1:
-  opensearch-data2:
-
-networks:
-  opensearch-net:

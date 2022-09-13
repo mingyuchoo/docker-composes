@@ -3,10 +3,11 @@
 ## How to start this container
 
 ```sh
+$ npm run docker:up
+
+# or
+
 $ docker-compose up -d
-Creating network "kafka_default" with the default driver
-Creating kafka_zookeeper_1 ... done
-Creating kafka_kafka_1     ... done
 ```
 
 ### Verify that both the servers are listening on the respective ports
@@ -28,6 +29,12 @@ kafka_1      | [2021-04-10 22:57:40,447] INFO [SocketServer brokerId=1] Started 
 kafka_1      | [2021-04-10 22:57:40,448] INFO [SocketServer brokerId=1] Started socket server acceptors and processors (kafka.network.SocketServer)
 kafka_1      | [2021-04-10 22:57:40,458] INFO [KafkaServer id=1] started (kafka.server.KafkaServer)
 ```
+
+
+## How to use Dashboard
+
+Connect to <http://localhost:8989>
+
 
 ## References
 
