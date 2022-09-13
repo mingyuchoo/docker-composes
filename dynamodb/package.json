@@ -4,15 +4,19 @@
   "description": "You can run docker containers for dynamodb",
   "main": "docker-compose.yml",
   "scripts": {
-    "docker:up": "docker-compose --file docker-compose.yml up --build --detach",
+    "docker:up": "mkdir -p ./docker/dynamodb && docker-compose --file docker-compose.yml up --build --detach",
     "docker:down": "docker-compose --file docker-compose.yml down --volumes --remove-orphans",
     "docker:exec": "docker exec -it dynamodb-local /bin/sh",
-    "docker:exec:root": "docker exec -u root -it dynamodb-local /bin/sh"
+    "docker:exec:root": "docker exec -u root -it dynamodb-local /bin/sh",
+    "admin": "DYNAMO_ENDPOINT=http://localhost:8000 dynamodb-admin"
   },
   "keywords": [
     "docker",
     "dynamo"
   ],
   "author": "mingyuchoo@gmail.com",
-  "license": "MIT License"
+  "license": "MIT License",
+  "devDependencies": {
+    "dynamodb-admin": "^4.4.0"
+  }
 }

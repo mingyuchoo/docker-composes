@@ -15,3 +15,18 @@ npm run docker:up
 ```sh
 npm run docker:down
 ```
+
+## How to use DynamoDB Admin GUI
+
+```sh
+npm install
+npm run admin
+```
+
+connect to <http://localhost:8001>
+
+## References
+
+-<https://medium.com/platform-engineer/running-aws-dynamodb-local-with-docker-compose-6f75850aba1e>
+
+
