@@ -13,14 +13,14 @@ volumes:
 services:
   typesense:
     image: typesense/typesense:0.23.1
+    container_name: typesense-db
+    restart: always
     deploy:
       restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
-    container_name: typesense-db
-    restart: always
     ports:
       - 8108:8108
     environment:
