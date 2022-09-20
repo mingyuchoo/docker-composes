@@ -123,4 +123,4 @@ cypress/**/screenshots
 .DS_Store
 
 # dcoker
-neo4j_db/
+neo4j/

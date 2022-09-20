@@ -36,10 +36,10 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: root
       MONGO_INITDB_DATABASE: admin
     volumes:
-      - ./init/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
-      - ./init/mongod.service:/lib/systemd/system/mongod.service
-      - ./init/mongod.conf:/etc/mongod.conf
-      # - ./db_data:/data/db
+      - /var/docker/init/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - /var/docker/init/mongod.service:/lib/systemd/system/mongod.service
+      - /var/docker/init/mongod.conf:/etc/mongod.conf
+      # - /var/docker/db_data:/data/db
 
   mongo-express:
     image: mongo-express

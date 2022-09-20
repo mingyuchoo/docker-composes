@@ -13,7 +13,7 @@ networks:
 #     name: my-net
 
 volumes:
-  db_data:
+  postgresql:
 
 services:
   postgresql-db:
@@ -42,5 +42,5 @@ services:
       - SONAR_USER=sonar
       - SONAR_PASSWORD=sonar
     volumes:
-      - ./init/:/docker-entrypoint-initdb.d/
-      - ./db_data:/var/lib/postgresql/data
+      - /var/docker/init/:/docker-entrypoint-initdb.d/
+      - /var/docker/postgresql:/var/lib/postgresql/data

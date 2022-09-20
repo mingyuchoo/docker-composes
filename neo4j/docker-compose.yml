@@ -12,7 +12,7 @@ networks:
 #     external: true
 #     name: my-net
 volumes:
-  neo4j_db:
+  neo4j:
 
 services:
   neo4j-db:
@@ -40,6 +40,6 @@ services:
       - NEO4J_dbms_default__database=neo4j
       - NEO4J_dbms_default__listen__address=0.0.0.0
     volumes:
-      - ./neo4j_db/data:/data
-      - ./neo4j_db/plugins:/plugins
-      - ./neo4j_db/import:/import
+      - /var/docker/neo4j/data:/data
+      - /var/docker/neo4j/plugins:/plugins
+      - /var/docker/neo4j/import:/import

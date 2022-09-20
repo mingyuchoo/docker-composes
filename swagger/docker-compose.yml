@@ -29,7 +29,7 @@ services:
     ports:
       - 9012:8080
     volumes:
-      - ./swagger/api/v1/openapi.json:/api/v1/openapi.json
+      - /var/docker/swagger/api/v1/openapi.json:/api/v1/openapi.json
     environment:
       SWAGGER_JSON: /api/v1/openapi.json
       # API_URL: ''
@@ -46,7 +46,7 @@ services:
     ports:
       - 9013:8000
     volumes:
-      - ./swagger/api/v1/openapi.json:/api/v1/openapi.json
+      - /var/docker/swagger/api/v1/openapi.json:/api/v1/openapi.json
     command: /api/v1/openapi.json
     networks:
       swagger_link:
@@ -65,7 +65,7 @@ services:
     ports:
       - 9014:8084
     volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - /var/docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
     networks:
       swagger_link:
         aliases:

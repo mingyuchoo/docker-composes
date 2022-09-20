@@ -7,7 +7,7 @@ networks:
     driver: bridge
 
 volumes:
-  data:
+  redis:
 
 services:
   redis-db:
@@ -25,4 +25,4 @@ services:
       - name=redis
       - mode=standalone
     volumes:
-      - ./data:/data
+      - /var/docker/redis:/redis
