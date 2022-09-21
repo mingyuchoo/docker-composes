@@ -1,11 +1,16 @@
 version: '3.9'
 
+# Create `my-net`
 networks:
-  default:
+  my-net:
     name: my-net
+    driver: bridge
 
-volumes:
-  jenkins:
+## But if `my-net` is exists, use it
+# networks:
+#   default:
+#     external: true
+#     name: my-net
 
 services:
   jenkins:
@@ -25,5 +30,5 @@ services:
     environment:
       - TZ=Asia/Seoul
     volumes:
-      - /var/jenkins_home:/var/jenkins_home
-      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/docker/jenkins_home:/var/jenkins_home
+      - /var/docker/jenkins_home/docker.sock:/var/run/docker.sock

@@ -1,10 +1,12 @@
 version: '3.9'
 
+# Create `my-net`
 networks:
   my-net:
     name: my-net
     driver: bridge
 
+## But if `my-net` is exists, use it
 # networks:
 #   default:
 #     external: true
@@ -24,6 +26,6 @@ services:
     ports:
       - 8000:8000
     volumes:
-      - /var/docker/dynamodb:/home/dynamodblocal/data
+      - /var/docker/dynamodblocal/data:/home/dynamodblocal/data
     command: '-jar DynamoDBLocal.jar -sharedDb -optimizeDbBeforeStartup -dbPath /home/dynamodblocal/data/'
 

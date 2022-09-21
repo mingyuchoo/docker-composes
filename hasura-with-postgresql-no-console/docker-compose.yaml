@@ -1,10 +1,16 @@
 version: '3.9'
 
+# Create `my-net`
 networks:
   my-net:
+    name: my-net
+    driver: bridge
 
-volumes:
-  db_data:
+## But if `my-net` is exists, use it
+# networks:
+#   default:
+#     external: true
+#     name: my-net
 
 services:
 
@@ -23,7 +29,7 @@ services:
     ports:
     - '5432:5432'
     volumes:
-    - db_data:/var/lib/postgresql/data
+    - /var/docker/postgresql/data:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: postgrespassword
 
@@ -47,7 +53,7 @@ services:
       HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
       ## enable the console served by server
       ## set to 'false' to disable console
-      HASURA_GRAPHQL_ENABLE_CONSOLE: 'false' 
+      HASURA_GRAPHQL_ENABLE_CONSOLE: 'false'
       ## enable debugging mode. It is recommended to disable this in production
       HASURA_GRAPHQL_DEV_MODE: 'true'
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log

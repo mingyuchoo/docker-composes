@@ -1,19 +1,16 @@
 version: '3.9'
 
-# Create `my-net` if exists use it
+# Create `my-net`
 networks:
   my-net:
     name: my-net
     driver: bridge
 
-# Use `my-net`
+## But if `my-net` is exists, use it
 # networks:
 #   default:
 #     external: true
 #     name: my-net
-
-# volumes:
-#   db_data:
 
 services:
   mongo:
@@ -36,10 +33,9 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: root
       MONGO_INITDB_DATABASE: admin
     volumes:
-      - /var/docker/init/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
-      - /var/docker/init/mongod.service:/lib/systemd/system/mongod.service
-      - /var/docker/init/mongod.conf:/etc/mongod.conf
-      # - /var/docker/db_data:/data/db
+      - /var/docker/mongodb/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - /var/docker/mongodb/mongod.service:/lib/systemd/system/mongod.service
+      - /var/docker/mongodb/mongod.conf:/etc/mongod.conf
 
   mongo-express:
     image: mongo-express

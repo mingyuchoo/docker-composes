@@ -1,21 +1,30 @@
 version: '3.9'
 
+# Create `my-net`
 networks:
-  gocd-net:
+  my-net:
+    name: my-net
+    driver: bridge
+
+## But if `my-net` is exists, use it
+# networks:
+#   default:
+#     external: true
+#     name: my-net
 
 services:
   gocd-git:
     image: gocdcontrib/git-http-backend:v2
     container_name: gocd-git
     networks:
-      - gocd-net
+      - my-net
     ports:
       - 8155:80
   gocd-server:
     image: 'gocd/gocd-server:v21.4.0'
     container_name: gocd-server
     networks:
-      - gocd-net
+      - my-net
     depends_on:
       - gocd-git
     ports:
@@ -27,7 +36,7 @@ services:
     image: 'gocd/gocd-agent-alpine-3.12:v21.4.0'
     container_name: gocd-agent
     networks:
-      - gocd-net
+      - my-net
     depends_on:
       - gocd-git
       - gocd-server

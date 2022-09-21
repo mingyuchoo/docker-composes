@@ -1,7 +1,16 @@
 version: '3.9'
 
+# Create `my-net`
 networks:
-  sonar-net:
+  my-net:
+    name: my-net
+    driver: bridge
+
+## But if `my-net` is exists, use it
+# networks:
+#   default:
+#     external: true
+#     name: my-net
 
 services:
   sonarqube-db:
@@ -16,7 +25,7 @@ services:
     ports:
       - 5432:5432
     networks:
-      - sonar-net
+      - my-net
     environment:
       - DEBUG=false
       - POSTGRES_DB=postgres
@@ -47,7 +56,7 @@ services:
         soft: -1
         hard: -1
     networks:
-      - sonar-net
+      - my-net
     environment:
       - sonar.jdbc.username=postgres
       - sonar.jdbc.password=postgres

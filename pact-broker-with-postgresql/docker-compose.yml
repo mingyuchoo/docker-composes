@@ -1,7 +1,16 @@
 version: '3.9'
 
+# Create `my-net`
 networks:
   my-net:
+    name: my-net
+    driver: bridge
+
+## But if `my-net` is exists, use it
+# networks:
+#   default:
+#     external: true
+#     name: my-net
 
 services:
   pact-broker-db:
@@ -23,8 +32,8 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     volumes:
-      - /mnt/postgres/data:/var/lib/postgresql/data
-      
+      - /var/docker/postgresql/data:/var/lib/postgresql/data
+
   pact:
     image: pactfoundation/pact-broker
     deploy:

@@ -1,16 +1,17 @@
 version: '3.9'
 
-## Create `my-net` if exists use it
-# networks:
-#  my-net:
-#    name: my-net
-#    driver: bridge
-
-# Use `my-net`
+# Create `my-net`
 networks:
-  default:
-    external: true
+  my-net:
     name: my-net
+    driver: bridge
+
+## But if `my-net` is exists, use it
+# networks:
+#   default:
+#     external: true
+#     name: my-net
+
 
 services:
 
