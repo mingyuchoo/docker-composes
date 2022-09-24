@@ -1,0 +1,39 @@
+version: '3.9'
+
+# Create `my-net`
+networks:
+  my-net:
+    name: my-net
+    driver: bridge
+
+## But if `my-net` is exists, use it
+# networks:
+#   default:
+#     external: true
+#     name: my-net
+
+services:
+  meilisearch:
+    image: getmeili/meilisearch:latest
+    container_name: meilisearch
+    restart: always
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    ports:
+      - 7700:7700
+    environment:
+      - http_proxy
+      - https_proxy
+      - MEILI_MASTER_KEY=${MEILI_MASTER_KEY:-masterKey}
+      - MEILI_NO_ANALYTICS=${MEILI_NO_ANALYTICS:-true}
+      - MEILI_ENV=${MEILI_ENV:-development}
+      - MEILI_LOG_LEVEL
+      - MEILI_DB_PATH=${MEILI_DB_PATH:-/data.ms}
+    networks:
+      - my-net
+    volumes:
+      - /var/docker/meilisearch/data.ms:/data.ms
