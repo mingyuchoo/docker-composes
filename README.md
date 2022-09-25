@@ -21,3 +21,11 @@ npm run docker:up
 ```sh
 npm run docker:down
 ```
+
+# Docker tips & techs
+
+## How to delete exited container
+
+```sh
+docker container rm $(docker container ls --all --filter status=exited --filter status=created --quiet)
+```
