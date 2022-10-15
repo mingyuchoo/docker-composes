@@ -14,7 +14,7 @@ networks:
 
 services:
   postgresql-db:
-    image: postgres:12
+    image: postgres:14
     container_name: postgresql-db
     restart: always
     deploy:
