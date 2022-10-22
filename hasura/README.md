@@ -10,6 +10,10 @@ docker-compose up -d
 npm run docker:up
 ```
 
+## How to connect to Hasura Console
+
+- <http://localhost:8080>
+
 ## How to stop and delete container
 
 ```sh
