@@ -2,13 +2,13 @@
 
 ## How to create docker network
 
-```sh
+```bash
 docker network create <network-name>
 ```
 
 ## How to run docker container using docker-compose file
 
-```sh
+```bash
 docker-compose up -d
 
 # or
@@ -18,7 +18,7 @@ npm run docker:up
 
 ## How to stop and delete container
 
-```sh
+```bash
 npm run docker:down
 ```
 
@@ -26,6 +26,6 @@ npm run docker:down
 
 ## How to delete exited container
 
-```sh
+```bash
 docker container rm $(docker container ls --all --filter status=exited --filter status=created --quiet)
 ```

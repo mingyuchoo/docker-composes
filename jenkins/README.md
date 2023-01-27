@@ -2,7 +2,7 @@
 
 ## How to start this container
 
-```sh
+```bash
 docker-compose up -d
 
 # or
@@ -12,13 +12,13 @@ npm run docker:up
 
 ## How to stop and delete container
 
-```sh
+```bash
 npm run docker:down
 ```
 
 ## How to find out a password for Admin
 
-```sh
+```bash
 docker logs jenkins | less
 ```
 
@@ -39,7 +39,7 @@ Change `/var/jenkins_home/hudson.model.UpdateCenter.xml` to like this ...
 
 and install `skip-certificate-check` plugin to `/var/jenkins_home/plugins/`
 
-```sh
+```bash
 sudo curl \
  -SL https://updates.jenkins-ci.org/download/plugins/skip-certificate-check/1.0/skip-certificate-check.hpi \
  -o /var/jenkins_home/plugins/skip-certificate-check.hpi

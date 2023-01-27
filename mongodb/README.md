@@ -4,7 +4,7 @@
 
 ## How to start this container
 
-```sh
+```bash
 docker-compose up -d
 
 # or
@@ -14,7 +14,7 @@ npm run docker:up
 
 ## How to stop and delete container
 
-```sh
+```bash
 npm run docker:down
 ```
 
@@ -26,7 +26,7 @@ npm run docker:down
 
 ## mongo cli 를 이용해서 직접 사용자를 추가하는 방법
 
-```sh
+```bash
 mongo
 
 > use admin

@@ -2,7 +2,7 @@
 
 ## How to start this container
 
-```sh
+```bash
 docker-compose up -d
 
 # or
@@ -12,6 +12,6 @@ npm run docker:up
 
 ## How to stop and delete container
 
-```sh
+```bash
 npm run docker:down
 ```

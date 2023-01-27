@@ -2,7 +2,7 @@
 
 ## How to start this container
 
-```sh
+```bash
 docker-compose up -d
 
 # or

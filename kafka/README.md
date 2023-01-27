@@ -2,7 +2,7 @@
 
 ## How to start this container
 
-```sh
+```bash
 $ npm run docker:up
 
 # or
@@ -12,7 +12,7 @@ $ docker-compose up -d
 
 ### Verify that both the servers are listening on the respective ports
 
-```sh
+```bash
 $ nc -z localhost 22181
 Connection to localhost port 22181 [tcp/*] succeeded!
 $ nc -z localhost 29092
@@ -21,7 +21,7 @@ Connection to localhost port 29092 [tcp/*] succeeded!
 
 ## verify that the Kafka server is up
 
-```sh
+```bash
 $ docker-compose logs kafka | grep -i started
 kafka_1      | [2021-04-10 22:57:40,413] DEBUG [ReplicaStateMachine controllerId=1] Started replica state machine with initial state -> HashMap() (kafka.controller.ZkReplicaStateMachine)
 kafka_1      | [2021-04-10 22:57:40,418] DEBUG [PartitionStateMachine controllerId=1] Started partition state machine with initial state -> HashMap() (kafka.controller.ZkPartitionStateMachine)

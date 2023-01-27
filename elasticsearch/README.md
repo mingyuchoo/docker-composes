@@ -4,21 +4,21 @@
 
 ### For Arch Linux Distro.
 
-```sh
+```bash
 echo vm.max_map_count=262144 | sudo tee -a /etc/sysctl.d/40-max-user-watches.conf
 sudo sysctl --system
 ```
 
 ### For Ubuntu Distro.
 
-```sh
-sudo sysctl -w vm.max_map_count=262144 
+```bash
+sudo sysctl -w vm.max_map_count=262144
 sudo echo "vm.max_map_count=262144" >> /etc/sysctl.conf
 ```
 
 ## How to start this container
 
-```sh
+```bash
 docker compose up -d
 
 # or
@@ -38,7 +38,7 @@ npm run docker:up
 
 ### Usage
 
-```sh
+```bash
 
 # CREATE message with new ID
 
@@ -64,7 +64,7 @@ curl --location --request GET 'http://localhost:9200/my_index/_doc/1' \
 --header 'Content-Type: application/json'
 
 
-# UPDATE a specific field in the document with a specific ID 
+# UPDATE a specific field in the document with a specific ID
 
 curl --location --request POST 'http://localhost:9200/my_index/_update/1' \
 --header 'Content-Type: application/json' \
@@ -89,6 +89,6 @@ curl --location --request DELETE 'http://localhost:9200/my_index' \
 
 ## How to stop and delete container
 
-```sh npm run docker:down
+```bash npm run docker:down
 ```
 

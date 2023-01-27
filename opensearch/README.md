@@ -6,21 +6,21 @@
 
 ### For Arch Linux Distro.
 
-```sh
+```bash
 echo vm.max_map_count=262144 | sudo tee -a /etc/sysctl.d/40-max-user-watches.conf
 sudo sysctl --system
 ```
 
 ### For Ubuntu Distro.
 
-```sh
-sudo sysctl -w vm.max_map_count=262144 
+```bash
+sudo sysctl -w vm.max_map_count=262144
 sudo echo "vm.max_map_count=262144" >> /etc/sysctl.conf
 ```
 
 ## How to start this container
 
-```sh
+```bash
 docker-compose up -d
 
 # or
@@ -30,7 +30,7 @@ npm run docker:up
 
 ## How to stop and delete container
 
-```sh
+```bash
 npm run docker:down
 ```
 
