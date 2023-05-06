@@ -6,8 +6,8 @@
   "scripts": {
     "docker:up": "docker-compose --file docker-compose.yml up --build --detach",
     "docker:down": "docker-compose --file docker-compose.yml down --volumes --remove-orphans",
-    "docker:exec": "docker exec -it elasticmq-db /bin/sh",
-    "docker:exec:root": "docker exec -u root -it elasticmq-db /bin/sh"
+    "docker:exec": "docker exec -it elasticmq-mq /bin/sh",
+    "docker:exec:root": "docker exec -u root -it elasticmq-mq /bin/sh"
   },
   "keywords": [
     "docker",

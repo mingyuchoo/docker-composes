@@ -1,20 +1,17 @@
-version: '3.9'
-
+version: "3.9"
 # Create `my-net`
 networks:
   my-net:
     name: my-net
     driver: bridge
-
 ## But if `my-net` is exists, use it
 # networks:
 #   default:
 #     external: true
 #     name: my-net
-
 services:
   elasticmq-mq:
-    image: 'softwaremill/elasticmq:latest'
+    image: "softwaremill/elasticmq:latest"
     container_name: elasticmq-mq
     restart: always
     deploy:
