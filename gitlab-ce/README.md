@@ -4,8 +4,6 @@
 
 ```bash
 docker-compose up -d
-
 # or
-
 npm run docker:up
 ```

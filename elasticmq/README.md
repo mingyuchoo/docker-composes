@@ -11,5 +11,7 @@ npm run docker:up
 ## How to stop and delete container
 
 ```bash
+docker-compose down
+# or
 npm run docker:down
 ```
