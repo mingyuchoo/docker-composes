@@ -1,17 +1,17 @@
 {
-  "name": "sqa",
+  "name": "sqs",
   "version": "1.0.0",
-  "description": "You can run docker containers for sqa",
+  "description": "You can run docker containers for sqs",
   "main": "docker-compose.yml",
   "scripts": {
     "docker:up": "docker-compose --file docker-compose.yml up --build --detach",
     "docker:down": "docker-compose --file docker-compose.yml down --volumes --remove-orphans",
-    "docker:exec": "docker exec -it sqa-db /bin/sh",
-    "docker:exec:root": "docker exec -u root -it sqa-db /bin/sh"
+    "docker:exec": "docker exec -it sqs-mq /bin/sh",
+    "docker:exec:root": "docker exec -u root -it sqs-mq /bin/sh"
   },
   "keywords": [
     "docker",
-    "sqa"
+    "sqs"
   ],
   "author": "mingyuchoo@gmail.com",
   "license": "MIT License"
