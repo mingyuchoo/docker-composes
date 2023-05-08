@@ -2,7 +2,9 @@ version: "3.9"
 # Create `my-net`
 networks:
   my-net:
-    driver: bridgeservices:
+    driver: bridge
+
+services:
   elasticmq-mq:
     image: "softwaremill/elasticmq:latest"
     container_name: elasticmq-mq
