@@ -18,7 +18,7 @@ services:
     ports: ["5432:5432"]
     volumes: ["./var/lib/postgresql/data:/var/lib/postgresql/data"]
     environment:
-      POSTGRES_PASSWORD: postgrespassword
+      POSTGRES_PASSWORD: postgres
   graphql-engine:
     image: hasura/graphql-engine:latest
     deploy:
@@ -33,7 +33,7 @@ services:
     ports: ["8080:8080"]
     depends_on: [postgres]
     environment:
-      HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
+      HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:postgres@postgres:5432/postgres
       ## enable the console served by server
       HASURA_GRAPHQL_ENABLE_CONSOLE: "true" # set to 'false' to disable console
       ## enable debugging mode. It is recommended to disable this in production

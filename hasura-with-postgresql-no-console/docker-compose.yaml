@@ -24,7 +24,7 @@ services:
     volumes:
     - /var/docker/postgresql/data:/var/lib/postgresql/data
     environment:
-      POSTGRES_PASSWORD: postgrespassword
+      POSTGRES_PASSWORD: postgres
 
   graphql-engine:
     image: hasura/graphql-engine:latest
@@ -43,7 +43,7 @@ services:
     depends_on:
     - 'postgres'
     environment:
-      HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
+      HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:postgres@postgres:5432/postgres
       ## enable the console served by server
       ## set to 'false' to disable console
       HASURA_GRAPHQL_ENABLE_CONSOLE: 'false'
