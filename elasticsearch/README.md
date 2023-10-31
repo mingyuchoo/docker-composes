@@ -23,7 +23,7 @@ docker compose up -d
 
 # or
 
-docker-compose up -d
+docker composeup -d
 
 # or
 

@@ -4,8 +4,8 @@
   "description": "You can run docker containers for swagger",
   "main": "docker-compose.yml",
   "scripts": {
-    "docker:up": "docker-compose --file docker-compose.yml up --build --detach",
-    "docker:down": "docker-compose --file docker-compose.yml down --volumes --remove-orphans",
+    "docker:up": "docker compose --file docker-compose.yml up --build --detach",
+    "docker:down": "docker compose --file docker-compose.yml down --volumes --remove-orphans",
     "docker:exec:swagger-editor": "docker exec -it swagger-editor /bin/sh",
     "docker:exec:swagger-ui": "docker exec -it swagger-ui /bin/sh",
     "docker:exec:swagger-api": "docker exec -it swagger-api /bin/sh",

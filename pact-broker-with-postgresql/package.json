@@ -4,8 +4,8 @@
   "description": "You can run docker containers for pact broker",
   "main": "docker-compose.yml",
   "scripts": {
-    "docker:up": "docker-compose --file docker-compose.yml up --build --detach",
-    "docker:down": "docker-compose --file docker-compose.yml down --volumes --remove-orphans",
+    "docker:up": "docker compose --file docker-compose.yml up --build --detach",
+    "docker:down": "docker compose --file docker-compose.yml down --volumes --remove-orphans",
     "docker:exec:pact-broker": "docker exec -it pact-broker /bin/sh",
     "docker:exec:pact-broker-db": "docker exec -it pact-broker-db /bin/sh"
   },

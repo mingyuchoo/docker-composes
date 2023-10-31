@@ -4,8 +4,8 @@
   "description": "You can run docker containers for hasura",
   "main": "docker-compose.yaml",
   "scripts": {
-    "docker:up": "docker-compose --file docker-compose.yaml up --build --detach",
-    "docker:down": "docker-compose --file docker-compose.yml down --volumes --remove-orphans",
+    "docker:up": "docker compose --file docker-compose.yaml up --build --detach",
+    "docker:down": "docker compose --file docker-compose.yml down --volumes --remove-orphans",
     "docker:exec:hasura": "docker exec -it hasura_engine /bin/sh",
     "docker:exec:hasura:root": "docker exec -u root -it hasura_engine /bin/sh",
     "docker:exec:db": "docker exec -it hasura_db /bin/sh"

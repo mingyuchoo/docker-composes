@@ -4,8 +4,8 @@
   "description": "You can run docker containers for nginx",
   "main": "docker-compose.yaml",
   "scripts": {
-    "docker:up": "docker-compose --file docker-compose.yaml up --build --detach",
-    "docker:down": "docker-compose --file docker-compose.yml down --volumes --remove-orphans",
+    "docker:up": "docker compose --file docker-compose.yaml up --build --detach",
+    "docker:down": "docker compose --file docker-compose.yml down --volumes --remove-orphans",
     "docker:exec": "docker exec -it nginx /bin/sh",
     "docker:exec:root": "docker exec -u root -it nginx /bin/sh"
   },

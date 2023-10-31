@@ -4,8 +4,8 @@
   "description": "",
   "main": "docker-compose.yml",
   "scripts": {
-    "docker:up": "docker-compose --file docker-compose.yml up --build --detach",
-    "docker:down": "docker-compose --file docker-compose.yml down --volumes --remove-orphans",
+    "docker:up": "docker compose --file docker-compose.yml up --build --detach",
+    "docker:down": "docker compose --file docker-compose.yml down --volumes --remove-orphans",
     "docker:exec:sonarqube": "docker exec -it sonarqube /bin/sh",
     "docker:exec:sonarqube-db": "docker exec -it sonarqube-db /bin/sh"
   },
