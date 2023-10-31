@@ -15,3 +15,9 @@ docker composedown
 # or
 npm run docker:down
 ```
+
+## How to find `root` user`s password
+
+```bash
+$ sudo cat /var/docker/gitlab/config/initial_root_password
+```
