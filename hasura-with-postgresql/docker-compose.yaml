@@ -14,9 +14,12 @@ services:
         window: 120s
     container_name: hasura-db
     restart: always
-    networks: [my-net]
-    ports: ["5432:5432"]
-    volumes: ["./var/lib/postgresql/data:/var/lib/postgresql/data"]
+    networks:
+      - my-net
+    ports:
+      - 5432:5432
+    volumes:
+      - /var/docker/postgresql/data:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: postgres
   graphql-engine:
@@ -29,9 +32,12 @@ services:
         window: 120s
     container_name: hasura-engine
     restart: always
-    networks: [my-net]
-    ports: ["8080:8080"]
-    depends_on: [postgres]
+    networks:
+      - my-net
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgres
     environment:
       HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:postgres@postgres:5432/postgres
       ## enable the console served by server
