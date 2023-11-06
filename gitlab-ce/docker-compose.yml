@@ -17,11 +17,11 @@ services:
         window: 120s
     container_name: gitlab
     restart: always
-    hostname: 'gitlab.example.com'
+    hostname: 'localhost'
     environment:
       TZ: 'Asia/Seoul'
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'http://gitlab.example.com'
+        external_url 'http://localhost:9080'
         # Add any other gitlab.rb configuration here, each on its own line
     ports:
       - 9022:22
