@@ -7,14 +7,14 @@ networks:
 
 services:
   gocd-git:
-    image: gocdcontrib/git-http-backend:v2
+    image: ynohat/git-http-backend:latest
     container_name: gocd-git
     networks:
       - my-net
     ports:
       - 8155:80
   gocd-server:
-    image: 'gocd/gocd-server:v21.4.0'
+    image: 'gocd/gocd-server:v23.4.0'
     container_name: gocd-server
     networks:
       - my-net
@@ -26,7 +26,7 @@ services:
     environment:
       - GO_SERVER_SYSTEM_PROPERTIES=-Dcruise.material.update.interval=2000 -Dmaterial.update.idle.interval=2000
   gocd-agent:
-    image: 'gocd/gocd-agent-alpine-3.12:v21.4.0'
+    image: 'gocd/gocd-agent-alpine-3.18:v23.4.0'
     container_name: gocd-agent
     networks:
       - my-net
