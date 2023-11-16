@@ -1,0 +1,14 @@
+workflow-aggregator
+git
+git-server
+ssh
+ssh-agent
+gradle
+pipeline-graph-analysis
+pipeline-rest-api
+pipeline-stage-view
+timestamper
+ws-cleanup
+jjwt-api
+htmlpublisher
+role-strategy

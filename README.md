@@ -33,5 +33,8 @@ npm run docker:down
 ## How to delete exited container
 
 ```bash
+docker container ls -qa | xargs -I {} docker container rm {}
+
+# or
 docker container rm $(docker container ls --all --filter status=exited --filter status=created --quiet)
 ```
