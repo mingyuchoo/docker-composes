@@ -3,7 +3,7 @@
 ## How to start this container
 
 ```bash
-docker composeup -d
+docker compose up -d
 # or
 npm run docker:up
 ```
@@ -11,7 +11,7 @@ npm run docker:up
 ## How to stop and delete container
 
 ```bash
-docker composedown
+docker compose down
 # or
 npm run docker:down
 ```
@@ -46,3 +46,8 @@ sudo curl \
 ```
 
 and restart Jenkins
+
+## References
+
+- <https://github.com/cinqict/jenkins-init-groovy>
+

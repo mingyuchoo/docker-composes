@@ -22,6 +22,8 @@ services:
     privileged: true
     environment:
       - TZ=Asia/Seoul
+      - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
     volumes:
       - /var/docker/jenkins_home:/var/jenkins_home
       - /var/docker/jenkins_home/docker.sock:/var/run/docker.sock
+      - ./init.groovy.d:/var/jenkins_home/init.groovy.d

@@ -3,7 +3,7 @@
 ## How to start this container
 
 ```bash
-docker composeup -d
+docker compose up -d
 # or
 npm run docker:up
 ```
