@@ -10,6 +10,10 @@ docker compose up -d
 npm run docker:up
 ```
 
+and connect to:
+
+- <http://localhost:9325/>
+
 ### 0.2 How to stop and delete container
 
 ```bash

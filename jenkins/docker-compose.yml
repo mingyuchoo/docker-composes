@@ -23,6 +23,8 @@ services:
     environment:
       - TZ=Asia/Seoul
       - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
+      - JENKINS_USER=admin
+      - JENKINS_PASS=admin
     volumes:
       - /var/docker/jenkins_home:/var/jenkins_home
       - /var/docker/jenkins_home/docker.sock:/var/run/docker.sock
