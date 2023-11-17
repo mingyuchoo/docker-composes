@@ -7,16 +7,15 @@ networks:
 
 services:
   postgresql-db:
-    # image: postgres:14
     image: postgres:latest
     container_name: postgresql-db
-    restart: always
     deploy:
       restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
+    restart: always
     ports:
       - 5432:5432
     networks:
@@ -36,5 +35,5 @@ services:
       - TEST_USER=test
       - TEST_PASSWORD=test
     volumes:
-      - /var/docker/init/:/docker-entrypoint-initdb.d/
+      - /var/docker/init:/docker-entrypoint-initdb.d
       - /var/docker/postgresql/data:/var/lib/postgresql/data

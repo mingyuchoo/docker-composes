@@ -9,13 +9,13 @@ networks:
 services:
   gitlab:
     image: 'gitlab/gitlab-ce:latest'
+    container_name: gitlab
     deploy:
       restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
-    container_name: gitlab
     restart: always
     hostname: 'gitlab.example.com'
     environment:

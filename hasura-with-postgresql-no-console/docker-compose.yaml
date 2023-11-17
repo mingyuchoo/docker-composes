@@ -8,14 +8,14 @@ networks:
 services:
 
   postgres:
-    image: postgres:12 # don't change version
+    image: postgres:14 # don't change version
+    container_name: hasura-db
     deploy:
       restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
-    container_name: hasura-db
     restart: always
     networks:
       - my-net
@@ -28,13 +28,13 @@ services:
 
   graphql-engine:
     image: hasura/graphql-engine:latest
+    container_name: hasura-engine
     deploy:
       restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
-    container_name: hasura-engine
     restart: always
     networks:
       - my-net
@@ -43,13 +43,16 @@ services:
     depends_on:
       - postgres
     environment:
+      ## `postgres` is a service name
       HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:postgres@postgres:5432/postgres
-      ## enable the console served by server
-      ## set to 'false' to disable console
-      HASURA_GRAPHQL_ENABLE_CONSOLE: 'false'
-      ## enable debugging mode. It is recommended to disable this in production
-      HASURA_GRAPHQL_DEV_MODE: 'true'
+      HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:postgres@postgres:5432/postgres
+      HASURA_GRAPHQL_METADATA_DIR: /hasura-metadata
+      HASURA_GRAPHQL_MIGRATIONS_DIR: /hasura-migrations
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
+      HASURA_GRAPHQL_DEV_MODE: "true"
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
       ## uncomment next line to set an admin secret
-      HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
-
+      # HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
+    volumes:
+      - /var/docker/hasura/migrations:/hasura-migrations
+      - /var/docker/hasura/metadata:/hasura-metadata

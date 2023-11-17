@@ -8,13 +8,13 @@ networks:
 services:
   gitlab:
     image: 'gitlab/gitlab-ee:latest'
+    container_name: gitlab
     deploy:
       restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
-    container_name: gitlab
     hostname: 'gitlab.example.com'
     environment:
       TZ: 'Asia/Seoul'
@@ -25,6 +25,6 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - '/var/docker/gitlab/config:/etc/gitlab'
-      - '/var/docker/gitlab/logs:/var/log/gitlab'
-      - '/var/docker/gitlab/data:/var/opt/gitlab'
+      - /var/docker/gitlab/config:/etc/gitlab
+      - /var/docker/gitlab/logs:/var/log/gitlab
+      - /var/docker/gitlab/data:/var/opt/gitlab

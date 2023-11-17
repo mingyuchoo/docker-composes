@@ -9,13 +9,13 @@ services:
   jenkins:
     build:
       context: .
+    container_name: jenkins
     deploy:
       restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
-    container_name: jenkins
     ports:
       - 8888:8080
       - 50000:50000

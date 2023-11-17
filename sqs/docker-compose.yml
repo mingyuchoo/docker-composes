@@ -8,13 +8,13 @@ services:
   sqs-mq:
     image: "roribio16/alpine-sqs:latest"
     container_name: sqs-mq
-    restart: always
     deploy:
       restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
+    restart: always
     ports:
       - 9324:9324
       - 9325:9325

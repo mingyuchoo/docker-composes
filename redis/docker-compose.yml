@@ -8,13 +8,14 @@ networks:
 services:
   redis-db:
     image: redis:latest
+    container_name: redis-db
     deploy:
       restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
-    container_name: redis-db
+    restart: always
     ports:
       - 6379:6379
     labels:

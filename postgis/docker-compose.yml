@@ -9,15 +9,15 @@ services:
   postgis-db:
     image: kartoza/postgis:14-3.2
     container_name: postgis-db
-    restart: always
     deploy:
       restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
+    restart: always
     ports:
-      - "5432:5432"
+      - 5432:5432
     networks:
       - my-net
     environment:

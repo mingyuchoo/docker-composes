@@ -13,13 +13,13 @@ networks:
 services:
   mariadb:
     image: 'mariadb:latest'
+    container_name: mariadb
     deploy:
       restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
-    container_name: mariadb
     ports:
       - 3306:3306
     environment:

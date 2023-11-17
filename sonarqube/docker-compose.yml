@@ -8,13 +8,14 @@ networks:
 services:
   sonarqube:
     image: sonarqube:8.9.9-community
+    container_name: sonarqube
     deploy:
       restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
-    container_name: sonarqube
+    restart: always
     command: -Dsonar.ce.javaOpts=-Xmx1192m -Dsonar.web.javaOpts=-Xmx1192m -Dsonar.search.javaAdditionalOpts=-Dnode.store.allow_mmap=false
     ports:
       - 9000:9000

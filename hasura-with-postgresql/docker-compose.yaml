@@ -8,13 +8,13 @@ networks:
 services:
   postgres:
     image: postgres:14 # don't change version
+    container_name: hasura-db
     deploy:
       restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
-    container_name: hasura-db
     restart: always
     networks:
       - my-net
@@ -43,13 +43,13 @@ services:
 
   graphql-engine:
     image: hasura/graphql-engine:latest
+    container_name: hasura-engine
     deploy:
       restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
-    container_name: hasura-engine
     restart: always
     networks:
       - my-net

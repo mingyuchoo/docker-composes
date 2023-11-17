@@ -9,13 +9,13 @@ services:
   mysql-db:
     image: 'mysql:latest'
     container_name: mysql-db
-    restart: always
     deploy:
       restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
+    restart: always
     ports:
       - 3306:3306
     networks:

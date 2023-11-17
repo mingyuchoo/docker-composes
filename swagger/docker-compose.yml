@@ -7,25 +7,27 @@ networks:
 services:
   swagger-editor:
     image: swaggerapi/swagger-editor
+    container_name: swagger-editor
     deploy:
       restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
-    container_name: 'swagger-editor'
+    restart: always
     ports:
       - 9011:8080
 
   swagger-ui:
     image: swaggerapi/swagger-ui
+    container_name: swagger-ui
     deploy:
       restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
-    container_name: 'swagger-ui'
+    restart: always
     ports:
       - 9012:8080
     volumes:
@@ -36,13 +38,13 @@ services:
 
   swagger-api:
     image: danielgtaylor/apisprout
+    container_name: swagger-api
     deploy:
       restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
-    container_name: 'swagger-api'
     ports:
       - 9013:8000
     volumes:
@@ -55,13 +57,13 @@ services:
 
   swagger-nginx:
     image: nginx:mainline-alpine
+    container_name: swagger-nginx
     deploy:
       restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
-    container_name: 'swagger-nginx'
     ports:
       - 9014:8084
     volumes:

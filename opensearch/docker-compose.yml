@@ -11,13 +11,13 @@ services:
   opensearch-node1:
     image: opensearchproject/opensearch:latest
     container_name: opensearch-node1
-    restart: always
     deploy:
       restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
+    restart: always
     environment:
       - cluster.name=opensearch-cluster
       - node.name=opensearch-node1
@@ -43,13 +43,13 @@ services:
   opensearch-node2:
     image: opensearchproject/opensearch:latest
     container_name: opensearch-node2
-    restart: always
     deploy:
       restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
+    restart: always
     environment:
       - cluster.name=opensearch-cluster
       - node.name=opensearch-node2
@@ -72,13 +72,13 @@ services:
   opensearch-dashboards:
     image: opensearchproject/opensearch-dashboards:latest
     container_name: opensearch-dashboards
-    restart: always
     deploy:
       restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
+    restart: always
     ports:
       - 5601:5601
     expose:

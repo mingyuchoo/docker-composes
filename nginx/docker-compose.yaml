@@ -8,14 +8,15 @@ networks:
 services:
   nginx:
     image: nginx:latest
+    container_name: nginx
     deploy:
       restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
-    container_name: nginx
+    restart: always
     ports:
-      - '80:80'
+      - 80:80
     volumes:
       - /var/docker/nginx/html:/usr/share/nginx/html

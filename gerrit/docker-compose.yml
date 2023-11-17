@@ -8,13 +8,13 @@ volumes:
 services:
   gerrit:
     image: gerritcodereview/gerrit
+    container_name: gerrit
     deploy:
       restart_policy:
         condition: on-failure
         delay: 5s
         max_attempts: 3
         window: 120s
-    container_name: gerrit
     ports:
       - "29418:29418"
       - "8080:8080"
