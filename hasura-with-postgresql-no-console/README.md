@@ -18,6 +18,12 @@ npm run docker:down
 
 ## How to use with Hausra CLI
 
+### Install the Hasura CLI
+
+```bash
+curl -L https://github.com/hasura/graphql-engine/raw/stable/cli/get.sh | bash
+```
+
 ### Create a project
 
 ```bash
