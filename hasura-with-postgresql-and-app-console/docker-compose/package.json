@@ -1,5 +1,5 @@
 {
-  "name": "hasura-with-postgresql",
+  "name": "hasura-with-postgresql-and-app-console",
   "version": "1.0.0",
   "description": "You can run docker containers for hasura",
   "main": "docker-compose.yaml",

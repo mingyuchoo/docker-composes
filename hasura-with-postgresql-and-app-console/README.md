@@ -1,4 +1,4 @@
-# Docker Compose for Hasura with PostgreSQL No Console
+# Docker Compose for Hasura with PostgreSQL and App Console
 
 ## How to start this container
 
