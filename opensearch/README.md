@@ -1,5 +1,4 @@
-# Docker Compose for OpenSearch
-
+# README
 - <https://docs.opensearch.com/manual/>
 
 ## Prerequsite

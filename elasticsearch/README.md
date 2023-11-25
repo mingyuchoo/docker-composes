@@ -1,5 +1,4 @@
-# Docker Compose for Elasticsearch
-
+# README
 ## Prerequsite
 
 ### For Arch Linux Distro.
@@ -20,13 +19,9 @@ sudo echo "vm.max_map_count=262144" >> /etc/sysctl.conf
 
 ```bash
 docker compose up -d
-
 # or
-
 docker compose up -d
-
 # or
-
 npm run docker:up
 ```
 
@@ -40,8 +35,7 @@ npm run docker:up
 
 ```bash
 
-# CREATE message with new ID
-
+# README
 curl --location --request POST 'http://localhost:9200/my_index/_doc' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -49,8 +43,7 @@ curl --location --request POST 'http://localhost:9200/my_index/_doc' \
   "message": "Hello, Elasticsearch"
 }'
 
-# CREATE document with a specific ID
-
+# README
 curl --location --request PUT 'http://localhost:9200/my_index/_doc/1' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -58,14 +51,12 @@ curl --location --request PUT 'http://localhost:9200/my_index/_doc/1' \
   "message": "Hello, Elasticsearch"
 }'
 
-# SELECT document with a specific ID
-
+# README
 curl --location --request GET 'http://localhost:9200/my_index/_doc/1' \
 --header 'Content-Type: application/json'
 
 
-# UPDATE a specific field in the document with a specific ID
-
+# README
 curl --location --request POST 'http://localhost:9200/my_index/_update/1' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -74,13 +65,11 @@ curl --location --request POST 'http://localhost:9200/my_index/_update/1' \
   }
 }'
 
-# DELETE document with a specific ID
-
+# README
 curl --location --request DELETE 'http://localhost:9200/my_index/_doc/1' \
 --header 'Content-Type: application/json'
 
-# DELETE index with a specific index name
-
+# README
 curl --location --request DELETE 'http://localhost:9200/my_index' \
 --header 'Content-Type: application/json'
 

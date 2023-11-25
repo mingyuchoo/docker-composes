@@ -1,5 +1,4 @@
-# Docker Compose for nginx
-
+# README
 ## How to start this container
 
 ```bash

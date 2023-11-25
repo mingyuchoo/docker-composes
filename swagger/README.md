@@ -1,5 +1,4 @@
-# Docker Compose for Swagger-UI
-
+# README
 ## How to start this container
 
 ```bash

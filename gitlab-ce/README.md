@@ -1,5 +1,4 @@
-# Docker Compose for GitLab
-
+# README
 ## How to start this container
 
 ```bash

@@ -1,5 +1,4 @@
-# Docker Compose for Gerrit
-
+# README
 ## How to start this container
 
 ```bash

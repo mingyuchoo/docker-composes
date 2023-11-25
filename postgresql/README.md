@@ -1,5 +1,4 @@
-# Docker Compose for PostgreSQL
-
+# README
 ## How to start this container
 
 ```bash

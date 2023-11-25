@@ -1,18 +1,13 @@
-# Docker Compose for Meilisearch
-
+# README
 ## Prerequsite
 
 ## How to start this container
 
 ```bash
 docker compose up -d
-
 # or
-
 docker compose up -d
-
 # or
-
 npm run docker:up
 ```
 

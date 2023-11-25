@@ -1,5 +1,4 @@
-# Docker Compose for Confluent Platform
-
+# README
 ## Containers
 
 - zookeeper

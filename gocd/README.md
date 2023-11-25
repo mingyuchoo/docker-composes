@@ -1,5 +1,4 @@
-# Docker Compose for GoCD
-
+# README
 ## How to start this container
 
 ```bash

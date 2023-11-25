@@ -1,5 +1,4 @@
-# Docker Compose for MariaDB
-
+# README
 ## How to start this container
 
 ```bash

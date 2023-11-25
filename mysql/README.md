@@ -1,5 +1,4 @@
-# Docker Compose for MySQL
-
+# README
 ## How to start this container
 
 ```bash

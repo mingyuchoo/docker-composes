@@ -1,5 +1,4 @@
-# Docker Compose for Typesense
-
+# README
 - <https://typesense.org/>
 
 ## How to start this container

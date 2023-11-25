@@ -1,5 +1,4 @@
-# Docker Compose for Grafana
-
+# README
 ## Default credentials
 
 - username: admin

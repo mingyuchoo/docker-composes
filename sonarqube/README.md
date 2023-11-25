@@ -1,5 +1,4 @@
-# SonarQube
-
+# README
 ## 준비할 환경
 
 - ubuntu 18.04 이상인 운영체제

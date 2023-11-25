@@ -1,5 +1,4 @@
-# Docker Compose for DynamoDB
-
+# README
 ## How to start this container
 
 ```bash

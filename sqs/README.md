@@ -1,5 +1,4 @@
-# Docker Compose for SQS
-
+# README
 ## 0. How to use this docker compose
 
 ### 0.1 How to start this container

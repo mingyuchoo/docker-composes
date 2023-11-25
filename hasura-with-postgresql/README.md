@@ -1,5 +1,4 @@
-# Docker Compose for Hasura with PostgreSQL
-
+# README
 ## How to start this container
 
 ```bash

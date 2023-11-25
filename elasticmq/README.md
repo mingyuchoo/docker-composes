@@ -1,5 +1,4 @@
-# Docker Compose for ElasticMQ
-
+# README
 ## How to start this container
 
 ```bash

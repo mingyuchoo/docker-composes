@@ -1,5 +1,4 @@
-# Docker Compose for influxdb
-
+# README
 ## How to start this container
 
 ```bash

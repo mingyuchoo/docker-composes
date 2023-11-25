@@ -4,8 +4,7 @@
   <a href="https://github.com/mingyuchoo/docker-composes/pulls"><img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/mingyuchoo/docker-composes?color=appveyor" /></a>
 </p>
 
-# docker-composes
-
+# README
 ## How to create docker network
 
 ```bash
@@ -28,9 +27,9 @@ docker compose down
 npm run docker:down
 ```
 
-# Docker tips & techs
+## Docker tips & techs
 
-## How to delete exited container
+### How to delete exited container
 
 ```bash
 docker container ls -qa | xargs -I {} docker container rm {}

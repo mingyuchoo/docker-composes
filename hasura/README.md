@@ -1,5 +1,4 @@
-# Docker Compose for Hasura
-
+# README
 ## How to start this container
 
 ```bash

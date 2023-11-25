@@ -1,12 +1,9 @@
-# Docker Compose for Kafka
-
+# README
 ## How to start this container
 
 ```bash
 $ npm run docker:up
-
 # or
-
 $ docker-compose up -d
 ```
 
