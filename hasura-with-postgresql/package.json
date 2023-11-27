@@ -9,6 +9,11 @@
     "docker:exec:hasura": "docker exec -it hasura-engine /bin/sh",
     "docker:exec:hasura:root": "docker exec -u root -it hasura-engine /bin/sh",
     "docker:exec:db": "docker exec -it hasura-db /bin/sh"
+    "podman:up": "podman compose --file docker-compose.yaml up --build --detach",
+    "podman:down": "podman compose --file docker-compose.yaml down --volumes --remove-orphans",
+    "podman:exec:hasura": "podman exec -it hasura-engine /bin/sh",
+    "podman:exec:hasura:root": "podman exec -u root -it hasura-engine /bin/sh",
+    "podman:exec:db": "podman exec -it hasura-db /bin/sh"
   },
   "keywords": [
     "docker",

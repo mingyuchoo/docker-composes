@@ -10,6 +10,12 @@
     "docker:exec:swagger-ui": "docker exec -it swagger-ui /bin/sh",
     "docker:exec:swagger-api": "docker exec -it swagger-api /bin/sh",
     "docker:exec:swagger-nginx": "docker exec -it swagger-nginx /bin/sh"
+    "podman:up": "podman compose --file docker-compose.yml up --build --detach",
+    "podman:down": "podman compose --file docker-compose.yml down --volumes --remove-orphans",
+    "podman:exec:swagger-editor": "podman exec -it swagger-editor /bin/sh",
+    "podman:exec:swagger-ui": "podman exec -it swagger-ui /bin/sh",
+    "podman:exec:swagger-api": "podman exec -it swagger-api /bin/sh",
+    "podman:exec:swagger-nginx": "podman exec -it swagger-nginx /bin/sh"
   },
   "keywords": [
     "docker",

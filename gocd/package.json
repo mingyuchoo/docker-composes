@@ -8,6 +8,10 @@
     "docker:down": "docker compose --file docker-compose.yml down --volumes --remove-orphans",
     "docker:exec": "docker exec -it gocd /bin/sh",
     "docker:exec:root": "docker exec -u root -it gocd /bin/sh"
+    "podman:up": "podman compose --file docker-compose.yml up --build --detach",
+    "podman:down": "podman compose --file docker-compose.yml down --volumes --remove-orphans",
+    "podman:exec": "podman exec -it gocd /bin/sh",
+    "podman:exec:root": "podman exec -u root -it gocd /bin/sh"
   },
   "keywords": [
     "docker",

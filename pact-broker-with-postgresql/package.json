@@ -8,6 +8,10 @@
     "docker:down": "docker compose --file docker-compose.yml down --volumes --remove-orphans",
     "docker:exec:pact-broker": "docker exec -it pact-broker /bin/sh",
     "docker:exec:pact-broker-db": "docker exec -it pact-broker-db /bin/sh"
+    "podman:up": "podman compose --file docker-compose.yml up --build --detach",
+    "podman:down": "podman compose --file docker-compose.yml down --volumes --remove-orphans",
+    "podman:exec:pact-broker": "podman exec -it pact-broker /bin/sh",
+    "podman:exec:pact-broker-db": "podman exec -it pact-broker-db /bin/sh"
   },
   "keywords": [
     "pact",
