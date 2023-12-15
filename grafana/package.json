@@ -6,7 +6,7 @@
   "scripts": {
     "docker:up": "docker compose --file docker-compose.yml up --build --detach",
     "docker:down": "docker compose --file docker-compose.yml down --volumes --remove-orphans",
-    "docker:exec": "docker exec -it grafana /bin/sh"
+    "docker:exec": "docker exec -it grafana /bin/sh",
     "podman:up": "podman compose --file docker-compose.yml up --build --detach",
     "podman:down": "podman compose --file docker-compose.yml down --volumes --remove-orphans",
     "podman:exec": "podman exec -it grafana /bin/sh"
