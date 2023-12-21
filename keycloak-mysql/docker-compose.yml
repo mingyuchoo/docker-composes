@@ -1,0 +1,63 @@
+version: '3.9'
+
+# Create `my-net`
+networks:
+  my-net:
+    driver: bridge
+
+services:
+  mysql-db:
+    image: 'mysql:latest'
+    container_name: mysql-db
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    restart: always
+    ports:
+      - 3306:3306
+    networks:
+      - my-net
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: keycloak
+      MYSQL_USER: keycloak
+      MYSQL_PASSWORD: keycloak
+      TZ: 'Asia/Seoul'
+    command:
+      - --default-authentication-plugin=mysql_native_password
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - /var/docker/mysql:/docker-entrypoint-initdb.d
+
+  keycloak-iam:
+    image: keycloak/keycloak:latest
+    container_name: keycloak-iam
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    restart: always
+    ports:
+      - 7000:8080
+    networks:
+      - my-net
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_DB: mysql
+      KC_DB_URL_HOST: mysql-db
+      KC_DB_URL_PORT: 3306
+      KC_DB_URL_DATABASE: keycloak
+      KC_DB_USER: keycloak
+      KC_DB_PASSWORD: keycloak
+    command: start-dev
+    # volumes:
+    #   - /var/docker/keycloak/data:/opt/keycloak/data
+    depends_on:
+      - mysql-db
