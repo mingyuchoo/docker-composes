@@ -44,7 +44,7 @@ services:
         window: 120s
     restart: always
     ports:
-      - 7000:8080
+      - 8080:8080
     networks:
       - my-net
     environment:
@@ -56,7 +56,7 @@ services:
       KC_DB_URL_DATABASE: keycloak
       KC_DB_USER: keycloak
       KC_DB_PASSWORD: keycloak
-    command: start-dev
+    command: "start-dev --hostname-url=http://127.0.0.1:8080"
     # volumes:
     #   - /var/docker/keycloak/data:/opt/keycloak/data
     depends_on:
