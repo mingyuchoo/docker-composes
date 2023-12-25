@@ -31,4 +31,4 @@ services:
       ADDITIONAL_PASSWORD: test
     volumes:
       - ./init/:/docker-entrypoint-initdb.d/
-    #  - /var/docker/postgresql/data:/var/lib/postgresql/data
+      - /var/docker/postgresql/data:/var/lib/postgresql/data
