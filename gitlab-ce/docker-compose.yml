@@ -8,7 +8,7 @@ networks:
 
 services:
   gitlab:
-    image: 'gitlab/gitlab-ce:latest'
+    image: gitlab/gitlab-ce:latest
     container_name: gitlab
     deploy:
       restart_policy:
@@ -28,6 +28,6 @@ services:
       - "9080:80"
       - "9443:443"
     volumes:
-      - '/var/docker/gitlab/config:/etc/gitlab'
-      - '/var/docker/gitlab/logs:/var/log/gitlab'
-      - '/var/docker/gitlab/data:/var/opt/gitlab'
+      - /var/docker/gitlab/config:/etc/gitlab
+      - /var/docker/gitlab/logs:/var/log/gitlab
+      - /var/docker/gitlab/data:/var/opt/gitlab

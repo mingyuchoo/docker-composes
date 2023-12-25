@@ -7,7 +7,7 @@ networks:
 
 services:
   gitlab:
-    image: 'gsdukbh/gitlab-ee-arm64:latest'
+    image: gsdukbh/gitlab-ee-arm64:latest
     container_name: gitlab
     deploy:
       restart_policy:
@@ -26,6 +26,6 @@ services:
       - "9080:80"
       - "9443:443"
 #    volumes:
-#      - '/var/docker/gitlab/config:/etc/gitlab'
-#      - '/var/docker/gitlab/logs:/var/log/gitlab'
-#      - '/var/docker/gitlab/data:/var/opt/gitlab'
+#      - /var/docker/gitlab/config:/etc/gitlab
+#      - /var/docker/gitlab/logs:/var/log/gitlab
+#      - /var/docker/gitlab/data:/var/opt/gitlab

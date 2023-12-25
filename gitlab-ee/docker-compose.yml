@@ -7,7 +7,7 @@ networks:
 
 services:
   gitlab:
-    image: 'gitlab/gitlab-ee:latest'
+    image: gitlab/gitlab-ee:latest
     container_name: gitlab
     deploy:
       restart_policy:
