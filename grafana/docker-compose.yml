@@ -16,4 +16,4 @@ services:
         max_attempts: 3
         window: 120s
     ports:
-      - 3300:3000
+      - "3300:3000"

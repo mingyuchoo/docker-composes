@@ -17,7 +17,7 @@ services:
         window: 120s
     restart: always
     ports:
-      - 5432:5432
+      - "5432:5432"
     networks:
       - my-net
     environment:

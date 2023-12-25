@@ -17,7 +17,7 @@ services:
         max_attempts: 3
         window: 120s
     ports:
-      - 8000:8000
+      - "8000:8000"
     volumes:
       - /var/docker/dynamodblocal/data:/home/dynamodblocal/data
     command: '-jar DynamoDBLocal.jar -sharedDb -optimizeDbBeforeStartup -dbPath /home/dynamodblocal/data/'

@@ -13,7 +13,7 @@ services:
         max_attempts: 3
         window: 120s
     ports:
-      - '32181:32181'
+      - "32181:32181"
     environment:
       ZOOKEEPER_CLIENT_PORT: 32181
       ZOOKEEPER_TICK_TIME: 2000
@@ -29,7 +29,7 @@ services:
         max_attempts: 3
         window: 120s
     ports:
-      - '9092:9092'
+      - "9092:9092"
     depends_on:
       - zookeeper-1
     environment:
@@ -52,7 +52,7 @@ services:
         max_attempts: 3
         window: 120s
     ports:
-      - '9093:9093'
+      - "9093:9093"
     depends_on:
       - zookeeper-1
     environment:
@@ -75,7 +75,7 @@ services:
         max_attempts: 3
         window: 120s
     ports:
-      - '9094:9094'
+      - "9094:9094"
     depends_on:
       - zookeeper-1
     environment:

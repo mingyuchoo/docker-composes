@@ -6,9 +6,10 @@ networks:
     driver: bridge
 
 services:
-  mysql-db:
-    image: 'mysql:latest'
-    container_name: mysql-db
+
+  postgresql-db:
+    image: 'postgres:latest'
+    container_name: postgresql-db
     deploy:
       restart_policy:
         condition: on-failure
@@ -17,21 +18,21 @@ services:
         window: 120s
     restart: always
     ports:
-      - "3306:3306"
+      - "5432:5432"
     networks:
       - my-net
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: keycloak
-      MYSQL_USER: keycloak
-      MYSQL_PASSWORD: keycloak
-      TZ: 'Asia/Seoul'
-    command:
-      - --default-authentication-plugin=mysql_native_password
-      - --character-set-server=utf8mb4
-      - --collation-server=utf8mb4_unicode_ci
+      DEBUG: false
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      ADDITIONAL_DB: keycloak
+      ADDITIONAL_SCHEMA: keycloak
+      ADDITIONAL_USER: keycloak
+      ADDITIONAL_PASSWORD: keycloak
     volumes:
-      - /var/docker/mysql:/docker-entrypoint-initdb.d
+      - ./init/:/docker-entrypoint-initdb.d/
+    #  - /var/docker/postgresql/data:/var/lib/postgresql/data
 
   keycloak-iam:
     image: keycloak/keycloak:latest
@@ -48,16 +49,16 @@ services:
     networks:
       - my-net
     environment:
+      KC_DB: postgres
+      KC_DB_URL_HOST: postgresql-db
+      KC_DB_URL_DATABASE: keycloak
+      KC_DB_SCHEMA: keycloak
+      KC_DB_PASSWORD: keycloak
+      KC_DB_USERNAME: keycloak
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
-      KC_DB: mysql
-      KC_DB_URL_HOST: mysql-db
-      KC_DB_URL_PORT: 3306
-      KC_DB_URL_DATABASE: keycloak
-      KC_DB_USER: keycloak
-      KC_DB_PASSWORD: keycloak
-    command: "start-dev --hostname-url=http://127.0.0.1:8080"
+    command: start-dev
     # volumes:
     #   - /var/docker/keycloak/data:/opt/keycloak/data
     depends_on:
-      - mysql-db
+      - postgresql-db

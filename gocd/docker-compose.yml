@@ -21,8 +21,8 @@ services:
     depends_on:
       - gocd-git
     ports:
-      - 8153:8153
-      - 8154:8154
+      - "8153:8153"
+      - "8154:8154"
     environment:
       - GO_SERVER_SYSTEM_PROPERTIES=-Dcruise.material.update.interval=2000 -Dmaterial.update.idle.interval=2000
   gocd-agent:

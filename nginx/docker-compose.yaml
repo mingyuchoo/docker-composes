@@ -17,6 +17,6 @@ services:
         window: 120s
     restart: always
     ports:
-      - 80:80
+      - "80:80"
     volumes:
       - /var/docker/nginx/html:/usr/share/nginx/html

@@ -17,7 +17,7 @@ services:
         max_attempts: 3
         window: 120s
     ports:
-      - 9324:9324
-      - 9325:9325
+      - "9324:9324"
+      - "9325:9325"
     networks:
       - my-net

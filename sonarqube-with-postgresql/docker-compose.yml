@@ -17,7 +17,7 @@ services:
         window: 120s
     restart: always
     ports:
-      - 5432:5432
+      - "5432:5432"
     networks:
       - my-net
     environment:
@@ -42,7 +42,7 @@ services:
       - sonarqube-db
     command: -Dsonar.ce.javaOpts=-Xmx1192m -Dsonar.web.javaOpts=-Xmx1192m -Dsonar.search.javaAdditionalOpts=-Dnode.store.allow_mmap=false
     ports:
-      - 9000:9000
+      - "9000:9000"
     ulimits:
       nofile:
         soft: 65536

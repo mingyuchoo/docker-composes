@@ -17,8 +17,8 @@ services:
         max_attempts: 3
         window: 120s
     ports:
-      - 8888:8080
-      - 50000:50000
+      - "8888:8080"
+      - "50000:50000"
     user: root
     privileged: true
     environment:

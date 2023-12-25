@@ -17,7 +17,7 @@ services:
         window: 120s
     restart: always
     ports:
-      - 6379:6379
+      - "6379:6379"
     labels:
       - name=redis
       - mode=standalone

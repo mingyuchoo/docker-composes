@@ -19,7 +19,7 @@ services:
     networks:
       - my-net
     ports:
-      - 5432:5432
+      - "5432:5432"
     environment:
       - DEBUG=false
       - POSTGRES_DB=postgres
@@ -54,7 +54,7 @@ services:
     networks:
       - my-net
     ports:
-      - 8080:8080
+      - "8080:8080"
     depends_on:
       - postgres
     environment:
