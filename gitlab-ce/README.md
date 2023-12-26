@@ -13,3 +13,8 @@ npm run docker:up
 $ sudo cat /var/docker/gitlab/config/initial_root_password
 ```
 
+### If you forget your password
+
+```bash
+docker exec -it gitlab gitlab-rake "gitlab:password:reset[root]"
+```
