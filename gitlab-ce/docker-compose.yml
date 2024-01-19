@@ -9,6 +9,7 @@ networks:
 services:
   gitlab:
     image: gitlab/gitlab-ce:latest
+    platform: linux/amd64
     container_name: gitlab
     deploy:
       restart_policy:
