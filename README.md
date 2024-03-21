@@ -5,6 +5,20 @@
 </p>
 
 # README
+
+## How to install Docker
+
+### Using Colima in macOS
+
+```bash
+$ rm -rf $HOME/.docker
+$ brew install docker
+$ brew install docker-compose
+$ brew install colima
+$ colima start
+```
+
+
 ## How to create docker network
 
 ```bash
