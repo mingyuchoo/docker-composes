@@ -1,8 +1,8 @@
 version: '3.9'
 
-# Create `my-net`
+# Create `default`
 networks:
-  my-net:
+  default:
     driver: bridge
 
 services:
@@ -20,7 +20,7 @@ services:
     ports:
       - "5432:5432"
     networks:
-      - my-net
+      - default
     environment:
       DEBUG: false
       POSTGRES_DB: postgres
@@ -47,7 +47,7 @@ services:
     ports:
       - "8080:8080"
     networks:
-      - my-net
+      - default
     environment:
       KC_DB: postgres
       KC_DB_URL_HOST: postgresql-db

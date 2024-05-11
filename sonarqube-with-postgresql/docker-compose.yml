@@ -1,8 +1,8 @@
 version: '3.9'
 
-# Create `my-net`
+# Create `default`
 networks:
-  my-net:
+  default:
     driver: bridge
 
 services:
@@ -19,7 +19,7 @@ services:
     ports:
       - "5432:5432"
     networks:
-      - my-net
+      - default
     environment:
       - DEBUG=false
       - POSTGRES_DB=postgres
@@ -51,7 +51,7 @@ services:
         soft: -1
         hard: -1
     networks:
-      - my-net
+      - default
     environment:
       - sonar.jdbc.username=postgres
       - sonar.jdbc.password=postgres

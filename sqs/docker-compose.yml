@@ -1,7 +1,7 @@
 version: "3.9"
-# Create `my-net`
+# Create `default`
 networks:
-  my-net:
+  default:
     driver: bridge
 
 services:
@@ -19,6 +19,6 @@ services:
       - "9324:9324"
       - "9325:9325"
     networks:
-      - my-net
+      - default
     volumes:
       - ./config/elasticmq.conf:/opt/config/elasticmq.conf

@@ -1,8 +1,8 @@
 version: "3.9"
 
-# Create `my-net`
+# Create `default`
 networks:
-  my-net:
+  default:
     driver: bridge
 
 services:
@@ -17,7 +17,7 @@ services:
         window: 120s
     restart: always
     networks:
-      - my-net
+      - default
     ports:
       - "5432:5432"
     environment:
@@ -52,7 +52,7 @@ services:
         window: 120s
     restart: always
     networks:
-      - my-net
+      - default
     ports:
       - "8080:8080"
     depends_on:

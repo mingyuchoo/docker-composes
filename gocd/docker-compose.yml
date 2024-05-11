@@ -1,8 +1,8 @@
 version: '3.9'
 
-# Create `my-net`
+# Create `default`
 networks:
-  my-net:
+  default:
     driver: bridge
 
 services:
@@ -10,14 +10,14 @@ services:
     image: ynohat/git-http-backend:latest
     container_name: gocd-git
     networks:
-      - my-net
+      - default
     ports:
       - 8155:80
   gocd-server:
     image: 'gocd/gocd-server:v23.4.0'
     container_name: gocd-server
     networks:
-      - my-net
+      - default
     depends_on:
       - gocd-git
     ports:
@@ -29,7 +29,7 @@ services:
     image: 'gocd/gocd-agent-alpine-3.18:v23.4.0'
     container_name: gocd-agent
     networks:
-      - my-net
+      - default
     depends_on:
       - gocd-git
       - gocd-server
