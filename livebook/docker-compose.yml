@@ -1,0 +1,22 @@
+networks:
+  docker-link:
+    external: true
+
+services:
+  livebook:
+    image: ghcr.io/livebook-dev/livebook
+    container_name: livebook
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    restart: always
+    ports:
+      - "5000:8080"
+      - "5001:8081"
+    networks:
+      - docker-link
+    environment:
+      - LIVEBOOK_PASSWORD=${LIVEBOOK_PASSWORD}
