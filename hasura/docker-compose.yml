@@ -1,9 +1,6 @@
-version: '3.9'
-
-# Create `default`
 networks:
-  default:
-    driver: bridge
+  docker-link:
+    external: true
 
 services:
   graphql-engine:
@@ -16,10 +13,10 @@ services:
         max_attempts: 3
         window: 120s
     restart: always
-    networks:
-      - default
     ports:
-      - "8080:8080"
+      - "6060:8080"
+    networks:
+      - docker-link
     environment:
       ## `postgresql-db` is a service name
       HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:postgres@postgresql-db:5432/postgres

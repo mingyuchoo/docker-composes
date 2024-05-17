@@ -1,9 +1,6 @@
-version: '3.9'
-
-# Create `default`
 networks:
-  default:
-    driver: bridge
+  docker-link:
+    external: true
 
 services:
 
@@ -21,6 +18,8 @@ services:
     restart: always
     ports:
       - "8081:8081"
+    networks:
+      - docker-link
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
       ME_CONFIG_MONGODB_ADMINPASSWORD: root

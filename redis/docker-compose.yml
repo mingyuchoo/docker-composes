@@ -1,9 +1,6 @@
-version: '3.9'
-
-# Create `default`
 networks:
-  default:
-    driver: bridge
+  docker-link:
+    external: true
 
 services:
   redis-db:
@@ -18,6 +15,8 @@ services:
     restart: always
     ports:
       - "6379:6379"
+    networks:
+      - docker-link
     labels:
       - name=redis
       - mode=standalone

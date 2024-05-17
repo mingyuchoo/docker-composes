@@ -1,9 +1,6 @@
-version: '3.9'
-
-# Create `default`
 networks:
-  default:
-    driver: bridge
+  docker-link:
+    external: true
 
 services:
   sonarqube:
@@ -19,6 +16,8 @@ services:
     command: -Dsonar.ce.javaOpts=-Xmx1192m -Dsonar.web.javaOpts=-Xmx1192m -Dsonar.search.javaAdditionalOpts=-Dnode.store.allow_mmap=false
     ports:
       - "9000:9000"
+    networks:
+      - docker-link
     ulimits:
       nofile:
         soft: 65536

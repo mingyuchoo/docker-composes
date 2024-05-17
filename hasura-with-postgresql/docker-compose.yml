@@ -1,12 +1,8 @@
-version: '3.9'
-
-# Create `default`
 networks:
-  default:
-    driver: bridge
+  docker-link:
+    external: true
 
 services:
-
   postgres:
     image: postgres:14 # don't change version
     container_name: hasura-db
@@ -17,14 +13,30 @@ services:
         max_attempts: 3
         window: 120s
     restart: always
-    networks:
-      - default
     ports:
       - "5432:5432"
-    volumes:
-      - /var/docker/postgresql/data:/var/lib/postgresql/data
+    networks:
+      - docker-link
     environment:
-      POSTGRES_PASSWORD: postgres
+      - DEBUG=false
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - METADATA_DB=metadata
+      - METADATA_USER=metadata
+      - METADATA_PASSWORD=metadat
+      - HASURA_DB=hasura
+      - HASURA_USER=hasura
+      - HASURA_PASSWORD=hasura
+      - SONAR_DB=sonar
+      - SONAR_USER=sonar
+      - SONAR_PASSWORD=sonar
+      - TEST_DB=test
+      - TEST_USER=test
+      - TEST_PASSWORD=test
+    volumes:
+      - /var/docker/init:/docker-entrypoint-initdb.d
+      - /var/docker/postgresql/data:/var/lib/postgresql/data
 
   graphql-engine:
     image: hasura/graphql-engine:latest
@@ -36,23 +48,22 @@ services:
         max_attempts: 3
         window: 120s
     restart: always
-    networks:
-      - default
     ports:
       - "8080:8080"
+    networks:
+      - docker-link
     depends_on:
       - postgres
     environment:
-      ## `postgres` is a service name
       HASURA_GRAPHQL_METADATA_DATABASE_URL: postgres://postgres:postgres@postgres:5432/postgres
       HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:postgres@postgres:5432/postgres
       HASURA_GRAPHQL_METADATA_DIR: /hasura-metadata
       HASURA_GRAPHQL_MIGRATIONS_DIR: /hasura-migrations
-      HASURA_GRAPHQL_ENABLE_CONSOLE: false
-      HASURA_GRAPHQL_DEV_MODE: true
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
+      HASURA_GRAPHQL_DEV_MODE: "true"
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
-      # uncomment next line to set an admin secret
-      HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
+      ## uncomment next line to set an admin secret
+      # HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
     volumes:
       - /var/docker/hasura/migrations:/hasura-migrations
       - /var/docker/hasura/metadata:/hasura-metadata

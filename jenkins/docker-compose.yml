@@ -1,9 +1,6 @@
-version: '3.9'
-
-# Create `default`
 networks:
-  default:
-    driver: bridge
+  docker-link:
+    external: true
 
 services:
   jenkins:
@@ -19,6 +16,8 @@ services:
     ports:
       - "8888:8080"
       - "50000:50000"
+    networks:
+      - docker-link
     user: root
     privileged: true
     environment:

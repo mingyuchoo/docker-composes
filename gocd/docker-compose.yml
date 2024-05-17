@@ -1,35 +1,34 @@
-version: '3.9'
-
-# Create `default`
 networks:
-  default:
-    driver: bridge
+  docker-link:
+    external: true
 
 services:
   gocd-git:
     image: ynohat/git-http-backend:latest
     container_name: gocd-git
-    networks:
-      - default
     ports:
       - 8155:80
+    networks:
+      - docker-link
+
   gocd-server:
     image: 'gocd/gocd-server:v23.4.0'
     container_name: gocd-server
-    networks:
-      - default
-    depends_on:
-      - gocd-git
     ports:
       - "8153:8153"
       - "8154:8154"
+    networks:
+      - docker-link
+    depends_on:
+      - gocd-git
     environment:
       - GO_SERVER_SYSTEM_PROPERTIES=-Dcruise.material.update.interval=2000 -Dmaterial.update.idle.interval=2000
+
   gocd-agent:
     image: 'gocd/gocd-agent-alpine-3.18:v23.4.0'
     container_name: gocd-agent
     networks:
-      - default
+      - docker-link
     depends_on:
       - gocd-git
       - gocd-server

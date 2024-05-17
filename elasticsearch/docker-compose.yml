@@ -1,8 +1,6 @@
-version: "2.2"
-
 networks:
-  elastic:
-    driver: bridge
+  docker-link:
+    external: true
 
 volumes:
   data01:
@@ -35,7 +33,8 @@ services:
     ports:
       - "9200:9200"
     networks:
-      - elastic
+      - docker-link
+
   es02:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.9.0
     container_name: es02
@@ -56,7 +55,8 @@ services:
     volumes:
       - data02:/usr/share/elasticsearch/data
     networks:
-      - elastic
+      - docker-link
+
   es03:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.9.0
     container_name: es03
@@ -77,4 +77,4 @@ services:
     volumes:
       - data03:/usr/share/elasticsearch/data
     networks:
-      - elastic
+      - docker-link

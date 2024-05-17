@@ -1,9 +1,6 @@
-version: '3.9'
-
-# Create `default`
 networks:
-  default:
-    driver: bridge
+  docker-link:
+    external: true
 
 services:
   neo4j-db:
@@ -18,6 +15,8 @@ services:
     ports:
       - "7474:7474"
       - "7687:7687"
+    networks:
+      - docker-link
     environment:
       - NEO4J_AUTH=neo4j/mypassword
       - NEO4J_dbms_logs_debug_level=DEBUG

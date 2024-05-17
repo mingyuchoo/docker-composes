@@ -1,9 +1,6 @@
-version: '3.9'
-
-# Create `default`
 networks:
-  default:
-    driver: bridge
+  docker-link:
+    external: true
 
 services:
   typesense:
@@ -18,6 +15,8 @@ services:
         window: 120s
     ports:
       - "8108:8108"
+    networks:
+      - docker-link
     environment:
       TYPESENSE_API_KEY: xyz
       TYPESENSE_DATA_DIR: /data/typesense

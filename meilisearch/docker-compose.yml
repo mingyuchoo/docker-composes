@@ -1,9 +1,6 @@
-version: '3.9'
-
-# Create `default`
 networks:
-  default:
-    driver: bridge
+  docker-link:
+    external: true
 
 services:
   meilisearch:
@@ -18,6 +15,8 @@ services:
         window: 120s
     ports:
       - "7700:7700"
+    networks:
+      - docker-link
     environment:
       - http_proxy
       - https_proxy
@@ -26,7 +25,5 @@ services:
       - MEILI_ENV=${MEILI_ENV:-development}
       - MEILI_LOG_LEVEL
       - MEILI_DB_PATH=${MEILI_DB_PATH:-/data.ms}
-    networks:
-      - default
     volumes:
       - /var/docker/meilisearch/data.ms:/data.ms

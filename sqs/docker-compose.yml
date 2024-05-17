@@ -1,8 +1,6 @@
-version: "3.9"
-# Create `default`
 networks:
-  default:
-    driver: bridge
+  docker-link:
+    external: true
 
 services:
   sqs-mq:
@@ -19,6 +17,6 @@ services:
       - "9324:9324"
       - "9325:9325"
     networks:
-      - default
+      - docker-link
     volumes:
       - ./config/elasticmq.conf:/opt/config/elasticmq.conf

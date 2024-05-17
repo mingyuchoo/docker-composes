@@ -1,9 +1,6 @@
-version: '3.9'
-
-# Create `default`
 networks:
-  default:
-    driver: bridge
+  docker-link:
+    external: true
 
 services:
   nginx:
@@ -18,5 +15,7 @@ services:
     restart: always
     ports:
       - "80:80"
+    networks:
+      - docker-link
     volumes:
       - /var/docker/nginx/html:/usr/share/nginx/html

@@ -1,12 +1,8 @@
-version: '3.9'
-
-# Create `default`
 networks:
-  default:
-    driver: bridge
+  docker-link:
+    external: true
 
 services:
-
   postgresql-db:
     image: 'postgres:latest'
     container_name: postgresql-db
@@ -20,7 +16,7 @@ services:
     ports:
       - "5432:5432"
     networks:
-      - default
+      - docker-link
     environment:
       DEBUG: false
       POSTGRES_DB: postgres
@@ -47,7 +43,7 @@ services:
     ports:
       - "8080:8080"
     networks:
-      - default
+      - docker-link
     environment:
       KC_DB: postgres
       KC_DB_URL_HOST: postgresql-db

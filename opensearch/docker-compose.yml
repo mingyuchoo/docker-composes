@@ -1,11 +1,10 @@
-version: '3.9'
+networks:
+  docker-link:
+    external: true
 
 volumes:
   opensearch-data1:
   opensearch-data2:
-
-networks:
-  opensearch-net:
 
 services:
   opensearch-node1:
@@ -38,7 +37,7 @@ services:
       - "9200:9200"
       - 9600:9600 # required for Performance Analyzer
     networks:
-      - opensearch-net
+      - docker-link
 
   opensearch-node2:
     image: opensearchproject/opensearch:latest
@@ -67,7 +66,7 @@ services:
     volumes:
       - opensearch-data2:/usr/share/opensearch/data
     networks:
-      - opensearch-net
+      - docker-link
 
   opensearch-dashboards:
     image: opensearchproject/opensearch-dashboards:latest
@@ -81,9 +80,7 @@ services:
     restart: always
     ports:
       - 5601:5601
-    expose:
-      - "5601"
+    networks:
+      - docker-link
     environment:
       OPENSEARCH_HOSTS: '["https://opensearch-node1:9200","https://opensearch-node2:9200"]' # must be a string with no spaces when specified as an environment variable
-    networks:
-      - opensearch-net

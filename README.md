@@ -22,7 +22,7 @@ $ colima start
 ## How to create docker network
 
 ```bash
-docker network create <network-name>
+docker network create docker-link
 ```
 
 ## How to run docker container using docker-compose file

@@ -1,9 +1,6 @@
-version: '3.9'
-
-# Create `default`
 networks:
-  default:
-    driver: bridge
+  docker-link:
+    external: true
 
 services:
   dynamodb-local:
@@ -18,6 +15,8 @@ services:
         window: 120s
     ports:
       - "8000:8000"
+    networks:
+      - docker-link
     volumes:
       - /var/docker/dynamodblocal/data:/home/dynamodblocal/data
     command: '-jar DynamoDBLocal.jar -sharedDb -optimizeDbBeforeStartup -dbPath /home/dynamodblocal/data/'

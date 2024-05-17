@@ -1,9 +1,6 @@
-version: '3.9'
-
-# Create `default`
 networks:
-  default:
-    driver: bridge
+  docker-link:
+    external: true
 
 services:
   gitlab:
@@ -25,6 +22,8 @@ services:
       - "9022:22"
       - "9080:80"
       - "9443:443"
+    networks:
+      - docker-link
 #    volumes:
 #      - /var/docker/gitlab/config:/etc/gitlab
 #      - /var/docker/gitlab/logs:/var/log/gitlab
