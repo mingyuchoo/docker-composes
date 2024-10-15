@@ -15,9 +15,9 @@ $ rm -rf $HOME/.docker
 $ brew install docker
 $ brew install docker-compose
 $ brew install colima
+$ docker context use colima
 $ colima start
 ```
-
 
 ## How to create docker network
 
