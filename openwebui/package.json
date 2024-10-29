@@ -1,17 +1,17 @@
 {
-  "name": "openwebui",
+  "name": "open-webui",
   "version": "1.0.0",
   "description": "You can run docker containers for openwebui",
   "main": "docker-compose.yml",
   "scripts": {
     "docker:up": "docker compose --file docker-compose.yml up --build --detach",
     "docker:down": "docker compose --file docker-compose.yml down --volumes --remove-orphans",
-    "docker:exec": "docker exec -it openwebui-db /bin/sh",
-    "docker:exec:root": "docker exec -u root -it openwebui-db /bin/sh",
+    "docker:exec": "docker exec -it open-webui /bin/sh",
+    "docker:exec:root": "docker exec -u root -it open-webui /bin/sh",
     "podman:up": "podman compose --file docker-compose.yml up --build --detach",
     "podman:down": "podman compose --file docker-compose.yml down --volumes --remove-orphans",
-    "podman:exec": "podman exec -it openwebui-db /bin/sh",
-    "podman:exec:root": "podman exec -u root -it openwebui-db /bin/sh"
+    "podman:exec": "podman exec -it open-webui /bin/sh",
+    "podman:exec:root": "podman exec -u root -it open-webui /bin/sh"
   },
   "keywords": [
     "docker",
