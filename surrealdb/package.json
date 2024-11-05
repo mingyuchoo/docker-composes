@@ -1,0 +1,22 @@
+{
+  "name": "surrealdb",
+  "version": "1.0.0",
+  "description": "You can run docker containers for surrealdb",
+  "main": "docker-compose.yml",
+  "scripts": {
+    "docker:up": "docker compose --file docker-compose.yml up --build --detach",
+    "docker:down": "docker compose --file docker-compose.yml down --volumes --remove-orphans",
+    "docker:exec": "docker exec -it surrealdb /bin/sh",
+    "docker:exec:root": "docker exec -u root -it surrealdb /bin/sh",
+    "podman:up": "podman compose --file docker-compose.yml up --build --detach",
+    "podman:down": "podman compose --file docker-compose.yml down --volumes --remove-orphans",
+    "podman:exec": "podman exec -it surrealdb /bin/sh",
+    "podman:exec:root": "podman exec -u root -it surrealdb /bin/sh"
+  },
+  "keywords": [
+    "docker",
+    "surrealdb"
+  ],
+  "author": "mingyuchoo@gmail.com",
+  "license": "MIT License"
+}

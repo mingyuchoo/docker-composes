@@ -1,0 +1,24 @@
+networks:
+  docker-link:
+    external: true
+
+services:
+  surrealdb:
+    image: "surrealdb/surrealdb:latest"
+    container_name: surrealdb
+    command: 
+      - start
+      - --log=trace
+      - --user=root
+      - --pass=root
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    restart: always
+    ports:
+      - "8000:8000"
+    networks:
+      - docker-link
