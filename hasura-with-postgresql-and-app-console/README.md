@@ -26,13 +26,13 @@ curl -L https://github.com/hasura/graphql-engine/raw/stable/cli/get.sh | bash
 ### Create a project
 
 ```bash
-hasura init <project-name> --endpoint http://localhost:8080 --admin-secret myadminsetcretkey
+hasura init {project-name} --endpoint http://localhost:8080 --admin-secret myadminsetcretkey
 ```
 
 ### Run project to use Console
 
 ```bash
-cd <project-name>
+cd {project-name}
 hasura console
 ```
 
