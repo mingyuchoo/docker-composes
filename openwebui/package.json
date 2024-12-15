@@ -1,20 +1,21 @@
 {
-  "name": "open-webui",
+  "name": "open-webui with ollama",
   "version": "1.0.0",
   "description": "You can run docker containers for openwebui",
   "main": "docker-compose.yml",
   "scripts": {
     "docker:up": "docker compose --file docker-compose.yml up --build --detach",
     "docker:down": "docker compose --file docker-compose.yml down --volumes --remove-orphans",
-    "docker:exec": "docker exec -it open-webui /bin/sh",
-    "docker:exec:root": "docker exec -u root -it open-webui /bin/sh",
+    "docker:ollama:exec": "docker exec -it ollama /bin/sh",
+    "docker:open-webui:exec": "docker exec -it open-webui /bin/sh",
     "podman:up": "podman compose --file docker-compose.yml up --build --detach",
     "podman:down": "podman compose --file docker-compose.yml down --volumes --remove-orphans",
-    "podman:exec": "podman exec -it open-webui /bin/sh",
-    "podman:exec:root": "podman exec -u root -it open-webui /bin/sh"
+    "podman:ollama:exec": "podman exec -it ollama /bin/sh",
+    "podman:open-web-ui:exec": "podman exec -it open-webui /bin/sh"
   },
   "keywords": [
     "docker",
+    "ollama",
     "openwebui"
   ],
   "author": "mingyuchoo@gmail.com",

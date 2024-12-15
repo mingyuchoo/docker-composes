@@ -3,6 +3,16 @@ networks:
     external: true
 
 services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    volumes:
+      - ollama:/root/.ollama
+    ports:
+      - "11434:11434"
+    networks:
+      - docker-link
+
   open-webui:
     image: ghcr.io/open-webui/open-webui:main
     container_name: open-webui
@@ -17,6 +27,10 @@ services:
       - "host.docker.internal:host-gateway"
     environment:
       - WEBUI_AUTH=False
+      - OLLAMA_API_BASE_URL=http://ollama:11434
+    depends_on:
+      - ollama
 
 volumes:
   open-webui:
+  ollama:
