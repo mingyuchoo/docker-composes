@@ -1,0 +1,24 @@
+networks:
+  docker-link:
+    external: true
+
+services:
+  valkey:
+    image: valkey/valkey:latest
+    container_name: valkey
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    restart: always
+    ports:
+      - "6379:6379"
+    networks:
+      - docker-link
+    labels:
+      - name=valkey
+      - mode=standalone
+    volumes:
+      - /var/docker/valkey:/valkey

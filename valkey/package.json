@@ -1,0 +1,22 @@
+{
+  "name": "valkey",
+  "version": "1.0.0",
+  "description": "You can run docker containers for valkey",
+  "main": "docker-compose.yml",
+  "scripts": {
+    "docker:up": "docker compose --file docker-compose.yml up --build --detach",
+    "docker:down": "docker compose --file docker-compose.yml down --volumes --remove-orphans",
+    "docker:exec": "docker exec -it valkey /bin/sh",
+    "docker:exec:root": "docker exec -u root -it valkey /bin/sh",
+    "podman:up": "podman compose --file docker-compose.yml up --build --detach",
+    "podman:down": "podman compose --file docker-compose.yml down --volumes --remove-orphans",
+    "podman:exec": "podman exec -it valkey /bin/sh",
+    "podman:exec:root": "podman exec -u root -it valkey /bin/sh"
+  },
+  "keywords": [
+    "docker",
+    "valkey"
+  ],
+  "author": "mingyuchoo@gmail.com",
+  "license": "MIT License"
+}
