@@ -19,7 +19,7 @@
     "dynamo"
   ],
   "author": "mingyuchoo@gmail.com",
-  "license": "MIT License",
+  "license": "BSD 3-Clause License",
   "devDependencies": {
     "dynamodb-admin": "^4.4.0"
   }

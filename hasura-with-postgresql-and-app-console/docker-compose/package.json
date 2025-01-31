@@ -30,7 +30,7 @@
     "hasura"
   ],
   "author": "mingyuchoo@gmail.com",
-  "license": "MIT License",
+  "license": "BSD 3-Clause License",
   "devDependencies": {
     "hasura-cli": "^2.0.9"
   }
