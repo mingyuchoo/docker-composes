@@ -22,10 +22,13 @@ services:
       POSTGRES_DB: postgres
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      ADDITIONAL_DB: test
-      ADDITIONAL_SCHEMA: test
-      ADDITIONAL_USER: test
-      ADDITIONAL_PASSWORD: test
+      ADDITIONAL_DB: dev
+      ADDITIONAL_SCHEMA: dev
+      ADDITIONAL_USER: dev
+      ADDITIONAL_PASSWORD: P@ssw0rd!
     volumes:
       - ./init/:/docker-entrypoint-initdb.d/
-      - /var/docker/postgresql/data:/var/lib/postgresql/data
+      - postgresql-data:/var/lib/postgresql/data
+
+volumes:
+  postgresql-data:
