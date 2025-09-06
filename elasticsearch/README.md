@@ -18,9 +18,9 @@ sudo echo "vm.max_map_count=262144" >> /etc/sysctl.conf
 ## How to start this container
 
 ```bash
-docker compose up -d
+docker compose up --build --detach -d
 # or
-docker compose up -d
+docker compose up --build --detach -d
 # or
 npm run docker:up
 ```

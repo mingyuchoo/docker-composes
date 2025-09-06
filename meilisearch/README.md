@@ -4,9 +4,9 @@
 ## How to start this container
 
 ```bash
-docker compose up -d
+docker compose up --build --detach -d
 # or
-docker compose up -d
+docker compose up --build --detach -d
 # or
 npm run docker:up
 ```

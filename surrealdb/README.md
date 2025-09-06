@@ -4,7 +4,7 @@
 ### 0.1 How to start this container
 
 ```bash
-docker compose up -d
+docker compose up --build --detach -d
 # or
 npm run docker:up
 ```
@@ -16,7 +16,7 @@ and connect to:
 ### 0.2 How to stop and delete container
 
 ```bash
-docker compose down
+docker compose down --volumes --remove-orphans
 # or
 npm run docker:down
 ```
