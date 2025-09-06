@@ -1,14 +1,15 @@
 # README
+
 ## Prerequsite
 
-### For Arch Linux Distro.
+### For Arch Linux Distro
 
 ```bash
 echo vm.max_map_count=262144 | sudo tee -a /etc/sysctl.d/40-max-user-watches.conf
 sudo sysctl --system
 ```
 
-### For Ubuntu Distro.
+### For Ubuntu Distro
 
 ```bash
 sudo sysctl -w vm.max_map_count=262144
@@ -25,11 +26,9 @@ docker compose up --build --detach -d
 npm run docker:up
 ```
 
-
 ## How to access Elastic Search endpoint
 
 - <http://localhost:9200>
-
 
 ### Usage
 
@@ -80,4 +79,3 @@ curl --location --request DELETE 'http://localhost:9200/my_index' \
 
 ```bash npm run docker:down
 ```
-

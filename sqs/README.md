@@ -1,4 +1,5 @@
 # README
+
 ## 0. How to use this docker compose
 
 ### 0.1 How to start this container
@@ -20,6 +21,7 @@ docker compose down --volumes --remove-orphans
 # or
 npm run docker:down
 ```
+
 ## 1. How to create a queue in the AWS
 
 Login "AWS Management Console"
@@ -51,6 +53,7 @@ touch index.js
 ##### Update `package.json` file to use ES6
 
 `package.json`
+
 ```json
 {
   "type": "module",
@@ -63,20 +66,22 @@ touch index.js
 ##### Fill in `credentials.js` with yours
 
 `credentials.js`
+
 ```javascript
 export const configForAWS = {
-	region: "ap-northeast-2",
-	credentials: {
-		accessKeyId: "MY-ACCESS-KEY-ID",
-		secretAccessKey: "MY-SECRET-ACCESS-KEY",
-	},
-	endpoint: "https://sqs.ap-northeast-2.amazonaws.com/1234567890/my-queue-name",
+ region: "ap-northeast-2",
+ credentials: {
+  accessKeyId: "MY-ACCESS-KEY-ID",
+  secretAccessKey: "MY-SECRET-ACCESS-KEY",
+ },
+ endpoint: "https://sqs.ap-northeast-2.amazonaws.com/1234567890/my-queue-name",
 };
 ```
 
 ##### Implement `index.js` file
 
 `index.js`
+
 ```javascript
 import {
   SQSClient,
@@ -153,19 +158,21 @@ visit your AWS SQS
 ##### Fill in `credentials.js` with yours
 
 `credentials.js`
+
 ```javascript
 export const configForAWS = {
-	region: "ap-northeast-2",
-	credentials: {
-		accessKeyId: "MY-ACCESS-KEY-ID",
-		secretAccessKey: "MY-SECRET-ACCESS-KEY",
-	},
+ region: "ap-northeast-2",
+ credentials: {
+  accessKeyId: "MY-ACCESS-KEY-ID",
+  secretAccessKey: "MY-SECRET-ACCESS-KEY",
+ },
 };
 ```
 
 ##### Implement `index.js` file
 
 `index.js`
+
 ```javascript
 import {
   SQSClient,
@@ -183,7 +190,7 @@ const queueUrl = "https://sqs.ap-northeast-2.amazonaws.com/1234567890/my-queue-n
 const sendMessageToQueue = async (quequeUrl, body) => {
   try {
     const command = new SendMessageCommand({
-	  QueueUrl: queueUrl,
+   QueueUrl: queueUrl,
       MessageBody: body,
       MessageAttributes: {
         UserId: { DataType: "String", StringValue: "user-id-01" },
@@ -199,7 +206,7 @@ const sendMessageToQueue = async (quequeUrl, body) => {
 const deleteMessage = async (queueUrl, receiptHandle) => {
   try {
     const command = new DeleteMessageCommand({
-	  QueueUrl: queueUrl,
+   QueueUrl: queueUrl,
       ReceiptHandle: receiptHandle,
     });
     const result = await sqsClient.send(command);
@@ -212,7 +219,7 @@ const deleteMessage = async (queueUrl, receiptHandle) => {
 const pollMessages = async (queueUrl) => {
   try {
     const command = new ReceiveMessageCommand({
-	  QueueUrl: queueUrl,
+   QueueUrl: queueUrl,
       MaxNumberOfMessages: 10,
       WaitTimeSeconds: 5,
       MessageAttributeNames: ["All"],
@@ -231,7 +238,6 @@ const pollMessages = async (queueUrl) => {
 await sendMessageToQueue(queueUrl, "Hello, World!");
 await pollMessages(queueUrl);
 ```
-
 
 ##### Run  the client app
 
@@ -273,6 +279,7 @@ touch index.js
 ##### Update `package.json` file to use ES6
 
 `package.json`
+
 ```json
 {
   "type": "module",
@@ -285,15 +292,17 @@ touch index.js
 ##### Fill in `credentials.js` with yours
 
 `credentials.js`
+
 ```javascript
 export const configForLocal = {
-	endpoint: "http://localhost:9324/queque/default",
+ endpoint: "http://localhost:9324/queque/default",
 };
 ```
 
 ##### Implement `index.js` file
 
 `index.js`
+
 ```javascript
 import {
   SQSClient,
@@ -370,15 +379,17 @@ visit `http://localhost:9325/` and check the "default" tab.
 ##### Fill in `credentials.js` with yours
 
 `credentials.js`
+
 ```javascript
 export const configForAWS = {
-	endpoint: "http://localhost:9324/queque/default",
+ endpoint: "http://localhost:9324/queque/default",
 };
 ```
 
 ##### Implement `index.js` file
 
 `index.js`
+
 ```javascript
 import {
   SQSClient,
@@ -396,7 +407,7 @@ const queueUrl = "http://localhost:9324/queque/default";
 const sendMessageToQueue = async (quequeUrl, body) => {
   try {
     const command = new SendMessageCommand({
-	  QueueUrl: queueUrl,
+   QueueUrl: queueUrl,
       MessageBody: body,
       MessageAttributes: {
         UserId: { DataType: "String", StringValue: "user-id-01" },
@@ -424,7 +435,7 @@ const deleteMessage = async (queueUrl, receiptHandle) => {
 const pollMessages = async (queueUrl) => {
   try {
     const command = new ReceiveMessageCommand({
-	  QueueUrl: queueUrl,
+   QueueUrl: queueUrl,
       MaxNumberOfMessages: 10,
       WaitTimeSeconds: 5,
       MessageAttributeNames: ["All"],
@@ -455,7 +466,6 @@ node index.js
 
 visit `http://localhost:9325/` and check the "default" tab.
 
-
 ### 3. References
 
-- https://youtu.be/_20HXT43hFk
+- <https://youtu.be/_20HXT43hFk>

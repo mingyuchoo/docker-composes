@@ -1,4 +1,5 @@
 # README
+
 ## How to start this container
 
 ```bash
@@ -27,5 +28,3 @@ connect to <http://localhost:8001>
 ## References
 
 -<https://medium.com/platform-engineer/running-aws-dynamodb-local-with-docker-compose-6f75850aba1e>
-
-

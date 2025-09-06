@@ -1,16 +1,17 @@
 # README
+
 - <https://docs.opensearch.com/manual/>
 
 ## Prerequsite
 
-### For Arch Linux Distro.
+### For Arch Linux Distro
 
 ```bash
 echo vm.max_map_count=262144 | sudo tee -a /etc/sysctl.d/40-max-user-watches.conf
 sudo sysctl --system
 ```
 
-### For Ubuntu Distro.
+### For Ubuntu Distro
 
 ```bash
 sudo sysctl -w vm.max_map_count=262144
@@ -37,4 +38,3 @@ npm run docker:down
 
 - Connecto to <http://localhost:5601>
 - id/pw is `admin/admin`
-

@@ -1,4 +1,5 @@
 # README
+
 ## How to start this container
 
 ```bash
@@ -18,7 +19,7 @@ npm run docker:down
 ## How to find `root` user`s password
 
 ```bash
-$ sudo cat /var/docker/gitlab/config/initial_root_password
+sudo cat /var/docker/gitlab/config/initial_root_password
 ```
 
 ### If you forget your password

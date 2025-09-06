@@ -1,4 +1,5 @@
 # README
+
 ## How to start this container
 
 ```bash
@@ -27,11 +28,9 @@ kafka_1      | [2021-04-10 22:57:40,448] INFO [SocketServer brokerId=1] Started 
 kafka_1      | [2021-04-10 22:57:40,458] INFO [KafkaServer id=1] started (kafka.server.KafkaServer)
 ```
 
-
 ## How to use Dashboard
 
 Connect to <http://localhost:8989>
-
 
 ## References
 

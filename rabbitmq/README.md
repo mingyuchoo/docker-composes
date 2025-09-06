@@ -1,4 +1,5 @@
 # README
+
 ## How to use this docker compose
 
 ### How to start this container
@@ -16,6 +17,7 @@ docker compose down --volumes --remove-orphans
 # or
 npm run docker:down
 ```
+
 ## How to install Redis
 
 ### on Ubuntu
@@ -50,4 +52,4 @@ redis-cli
 
 ### for GUI
 
-- Download the latest RedisInsight - https://redis.com/redis-enterprise/redis-insight/
+- Download the latest RedisInsight - <https://redis.com/redis-enterprise/redis-insight/>
