@@ -1,0 +1,22 @@
+{
+  "name": "qdrant",
+  "version": "1.0.0",
+  "description": "You can run docker containers for qdrant",
+  "main": "docker-compose.yml",
+  "scripts": {
+    "docker:up": "docker compose --file docker-compose.yml up --build --detach",
+    "docker:down": "docker compose --file docker-compose.yml down --volumes --remove-orphans",
+    "docker:exec": "docker exec -it qdrant-vector-db /bin/sh",
+    "docker:exec:root": "docker exec -u root -it qdrant-vector-db /bin/sh",
+    "podman:up": "podman compose --file docker-compose.yml up --build --detach",
+    "podman:down": "podman compose --file docker-compose.yml down --volumes --remove-orphans",
+    "podman:exec": "podman exec -it qdrant-vector-db /bin/sh",
+    "podman:exec:root": "podman exec -u root -it qdrant-vector-db /bin/sh"
+  },
+  "keywords": [
+    "docker",
+    "qdrant"
+  ],
+  "author": "mingyuchoo@gmail.com",
+  "license": "BSD 3-Clause License"
+}
