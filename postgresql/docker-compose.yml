@@ -28,7 +28,6 @@ services:
       ADDITIONAL_PASSWORD: P@ssw0rd!
     volumes:
       - ./init/:/docker-entrypoint-initdb.d/
-      - postgresql-data:/var/lib/postgresql/data
 
 volumes:
   postgresql-data:
